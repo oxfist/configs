@@ -1,4 +1,4 @@
 Configs
 =======
 
-Some linux personal application configuration
+Misc configurations.
