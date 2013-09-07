@@ -1,5 +1,8 @@
 " syntax stuff
 syntax on
+filetype on
+filetype indent on
+filetype plugin on
 set t_Co=256
 
 set autoindent "Keep indentation from previous line
@@ -11,7 +14,19 @@ set expandtab "Tabs to spaces
 set tabstop=4
 set softtabstop=4
 
-set keymap=accents
+"Select text without the line numbers
+set mouse+=a
+
+" F11 to toggle paste mode
+map <F11> :set invpaste<CR>
+set pastetoggle=<F11>
+
+"set keymap=accents
+
+"Paste mode mapped to F2
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " Lines
 set nu!
@@ -26,30 +41,13 @@ colorscheme jellybeans
 "colorscheme railscasts
 "colorscheme vividchalk
 
+au BufRead,BufNewFile *.twig set filetype=htmljinja
+
 filetype plugin on
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd w
-
-function! NERDTreeQuit()
-  redir => buffersoutput
-  silent buffers
-  redir END
-"                     1BufNo  2Mods.     3File           4LineNo
-  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
-  let windowfound = 0
-
-  for bline in split(buffersoutput, "\n")
-    let m = matchlist(bline, pattern)
-
-    if (len(m) > 0)
-      if (m[2] =~ '..a..')
-        let windowfound = 1
-      endif
-    endif
-  endfor
-
-  if (!windowfound)
-    quitall
-  endif
-endfunction
-autocmd WinEnter * call NERDTreeQuit()
+autocmd FileType php setlocal makeprg=zca\ %<.php
+autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeWinPos = "right"
