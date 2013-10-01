@@ -1,7 +1,7 @@
 set nocompatible
 
 call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 
 " syntax stuff
 syntax on
@@ -36,6 +36,9 @@ filetype plugin indent on
 
 "Select text without the line numbers
 set mouse=a
+
+"Set yank and paste to work with the clipboard.
+set clipboard=unnamedplus
 
 "set keymap=accents
 
