@@ -1,7 +1,7 @@
-set nocompatible
+set nocompatible "This is ViM, not Vi!
 
+call pathogen#infect()
 call pathogen#helptags()
-call pathogen#incubate()
 
 " syntax stuff
 syntax on
@@ -69,7 +69,7 @@ colorscheme jellybeans
 au BufRead,BufNewFile *.twig set filetype=htmljinja
 
 filetype plugin on
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd w
 autocmd FileType php setlocal makeprg=zca\ %<.php
 autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
