@@ -47,11 +47,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"Toggle line numbers with Ctrl+N+N
+nmap <C-N><C-N> :set invnumber<CR>
+
+"Map F7 to reindent entire file
+map <F7> mzgg=G`z<CR>
+
 " Clears highlight with ',' + '/'
 nmap <silent> ,/ :nohlsearch<CR>
 
-" 'w!!' for sudo saving
-cmap w!! w !sudo tee % >/dev/null
+" 'W' for sudo saving
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 "Paste mode mapped to F2
 nnoremap <F2> :set invpaste paste?<CR>
