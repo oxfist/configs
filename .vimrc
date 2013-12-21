@@ -32,6 +32,8 @@ set noswapfile
 set expandtab "Tabs to spaces
 set softtabstop=4
 
+set colorcolumn=80
+
 filetype plugin indent on
 
 "Select text without the line numbers
