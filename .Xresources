@@ -1,0 +1,71 @@
+URxvt.termName:                 rxvt-256color
+URxvt*depth:                    32
+URxvt*buffered:                 false
+URxvt*transparent:              true
+URxvt*shading:                  20
+URxvt*scrollBar_right:          false
+URxvt*scrollBar:                false
+URxvt*transpscrollbar:          true
+URxvt*saveLines:                32767
+URxvt*perl-lib:                 /usr/lib/urxvt/perl/
+URxvt.letterSpace:              -1
+URxvt.perl-ext-common:          default,tabbedex
+URxvt.tabbed.autohide:          true
+URxvt.tabbed.reopen-on-close:   yes
+URxvt.keysym.Control-t:         perl:tabbedex:new_tab
+URxvt.keysym.Control-Tab:       perl:tabbedex:next_tab
+
+URxvt*font:             xft:Monaco:style=Book:pixelsize=14
+URxvt*boldFont:         xft:Monaco:bold:pixelsize=14
+
+URxvt*foreground:       #f2f2f2
+URxvt*background:       #101010
+
+URxvt.perl-ext:         default,matcher
+URxvt.url-launcher:     /usr/bin/firefox
+URxvt.matcher.button:   1
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    magenta
+! color6    cyan
+! color7    white
+
+*color0:  #2E3436
+*color1:  #df1a00
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    magenta
+! color14    cyan
+! color15    white
+
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
+
+! Xft settings
+Xft.dpi:                96
+Xft.antialias:          true
+Xft.rgba:               rgb
+Xft.hinting:            true
+Xft.hintstyle:          hintslight

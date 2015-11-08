@@ -1,29 +1,15 @@
-#!/bin/sh
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
+# Load .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
-fi
+# Disable PC beep
+xset -b
 
-while true; do
-    xsetroot -name "$( date +"%F %R" )"
-    sleep 1m    # Update time every minute
-done &
+# Decrease mouse sensitivity
+xset m 1 1
 
-urxvt -pe tabbed &
+# Start MPD with config
+mpd ~/.config/mpd/mpd.conf
 
-#Impersonate anopther Window Manager so NetBeans GUI is OK
-wmname LG3D
+sh ~/.fehbg
 
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
-
-./startdwm
+exec i3 -V >> ~/i3log-$(date + '%F-%k-%M-%S') 2>&1
