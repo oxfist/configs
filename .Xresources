@@ -9,11 +9,12 @@ URxvt*transpscrollbar:          true
 URxvt*saveLines:                32767
 URxvt*perl-lib:                 /usr/lib/urxvt/perl/
 URxvt.letterSpace:              -1
-URxvt.perl-ext-common:          default,tabbedex
+URxvt.perl-ext-common:          default,tabbedex,selection-to-clipboard
 URxvt.tabbed.autohide:          true
 URxvt.tabbed.reopen-on-close:   yes
 URxvt.keysym.Control-t:         perl:tabbedex:new_tab
 URxvt.keysym.Control-Tab:       perl:tabbedex:next_tab
+URxvt*loginShell:               true
 
 URxvt*font:             xft:Monaco:style=Book:pixelsize=14
 URxvt*boldFont:         xft:Monaco:bold:pixelsize=14
