@@ -1,0 +1,21 @@
+[user]
+    name = Andrés Caro
+    email = andres.caro.q@gmail.com
+[github]
+    user = oxfist
+[color]
+    ui = true
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --pretty=format:"%C(red)%h%x09%C(yellow)%an%x09%C(green)%s" --abbrev-commit --branches=* --graph --decorate --all
+    lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[credential]
+	helper = cache
+[core]
+	editor = vim
+	autocrlf = input
+	whitespace = cr-at-eol
