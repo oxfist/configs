@@ -1,8 +1,5 @@
 set nocompatible "This is ViM, not Vi!
 
-call pathogen#infect()
-call pathogen#helptags()
-
 " syntax stuff
 syntax on
 filetype on
@@ -34,15 +31,11 @@ set softtabstop=4
 
 set colorcolumn=80
 
-filetype plugin indent on
-
 "Select text without the line numbers
 set mouse=a
 
 "Set yank and paste to work with the clipboard.
 set clipboard=unnamedplus
-
-"set keymap=accents
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -55,7 +48,7 @@ nmap <C-N><C-N> :set invnumber<CR>
 "Map F7 to reindent entire file
 map <F7> mzgg=G`z<CR>
 
-" Clears highlight with ',' + '/'
+" Clears highlight after searching with ',' + '/'
 nmap <silent> ,/ :nohlsearch<CR>
 
 " 'W' for sudo saving
@@ -63,6 +56,9 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 "Paste mode mapped to F2
 nnoremap <F2> :set invpaste paste?<CR>
+
+"Go back to normal mode typing 'k' + 'j'
+:inoremap kj <ESC>
 set pastetoggle=<F2>
 set showmode
 
@@ -74,9 +70,6 @@ colorscheme jellybeans
 "colorscheme railscasts
 "colorscheme vividchalk
 
-au BufRead,BufNewFile *.twig set filetype=htmljinja
-
-filetype plugin on
 "autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd w
 autocmd FileType php setlocal makeprg=zca\ %<.php
@@ -84,3 +77,46 @@ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "right"
+
+" *** Vundle and plugins ***
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'alvan/vim-closetag'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
+" Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'othree/html5.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-rails'
+Plugin 'scrooloose/syntastic'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'danro/rename.vim'
+
+call vundle#end()            " required
+
+"JavaScript
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+let g:polyglot_disabled = ['vim-javascript']
+let g:used_javascript_libs = 'underscore,backbone,react'
+let g:jsx_ext_required = 0
+
+"Ruby
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_ruby_checkers = ['rubocop']
+let ruby_space_errors = 1
+
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js"
