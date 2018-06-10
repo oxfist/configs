@@ -95,18 +95,22 @@ Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 Plugin 'othree/html5.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-rails'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'othree/yajs.vim'
+Plugin 'neoclide/vim-jsx-improve'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'leshill/vim-json'
 Plugin 'danro/rename.vim'
 
 call vundle#end()            " required
 
 "JavaScript
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-let g:polyglot_disabled = ['vim-javascript']
+let g:polyglot_disabled = ["graphql", "jsx"]
 let g:used_javascript_libs = 'underscore,backbone,react'
-let g:jsx_ext_required = 0
+let g:javascript_plugin_jsdoc = 1
+let g:syntastic_javascript_checkers = ['']
+let g:mta_filetypes = { 'html': 1, 'xml': 1, 'javascript': 1 }
 
 "Ruby
 set statusline+=%#warningmsg#
@@ -119,4 +123,4 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_ruby_checkers = ['rubocop']
 let ruby_space_errors = 1
 
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx"
