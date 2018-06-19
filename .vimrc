@@ -94,7 +94,7 @@ Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 " Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-rails'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'neoclide/vim-jsx-improve'
@@ -123,4 +123,4 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_ruby_checkers = ['rubocop']
 let ruby_space_errors = 1
 
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.html.erb"
