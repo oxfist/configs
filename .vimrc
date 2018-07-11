@@ -89,18 +89,16 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'alvan/vim-closetag'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
-" Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'othree/html5.vim'
 Plugin 'sheerun/vim-polyglot'
-" Plugin 'tpope/vim-rails'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'neoclide/vim-jsx-improve'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'leshill/vim-json'
 Plugin 'danro/rename.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'hail2u/vim-css3-syntax'
 
 call vundle#end()            " required
 
