@@ -57,7 +57,7 @@ status.register("alsa",
 # Format:
 # Cloud connected▶Reroute to Remain
 status.register("mpd",
-                format = "{title} {status} {artist} ({album}) ({song_elapsed}/{song_length})",
+                format = "{title} {status} {artist} ({album}) {song_elapsed}/{song_length}",
                 max_field_len = 50,
                 on_upscroll = "previous_song",
                 on_downscroll = "next_song",
