@@ -1,8 +1,8 @@
-#Configs
+# Configs
 
 Misc configurations.
 
-##Install fonts
+## Install fonts
 
 1. Google Noto: package `noto-fonts`
 2. Adobe Source Han Sans: package `adobe-source-han-sans-otc-fonts`
