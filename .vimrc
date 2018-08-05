@@ -88,6 +88,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'alvan/vim-closetag'
 Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 Plugin 'sheerun/vim-polyglot'
@@ -122,3 +123,6 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let ruby_space_errors = 1
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.html.erb"
+
+" Enable Powerline fonts in order to display glyphs on Airline
+let g:airline_powerline_fonts = 1
