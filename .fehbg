@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Set wallpaper.
+feh --bg-scale '/home/oxfist/wallpaper.jpg' 
