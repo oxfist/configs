@@ -15,7 +15,7 @@ background_style        tile
 background_color        #000000
 
 # input box controls
-input_font          	Monaco:size=10:bold:dpi=96
+input_font          	Roboto:size=11:bold:dpi=96
 input_fgcolor           #000000
 
 # panel location
