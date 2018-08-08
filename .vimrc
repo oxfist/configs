@@ -100,6 +100,7 @@ Plugin 'leshill/vim-json'
 Plugin 'danro/rename.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 
