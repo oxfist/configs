@@ -101,6 +101,7 @@ Plugin 'danro/rename.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-abolish'
 
 call vundle#end()            " required
 
