@@ -37,6 +37,8 @@ set mouse=a
 "Set yank and paste to work with the clipboard.
 set clipboard=unnamedplus
 
+set wildignore+=*/node_modules/*,*/public/*
+
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -102,6 +104,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()            " required
 
