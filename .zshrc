@@ -87,8 +87,13 @@ source $ZSH/oh-my-zsh.sh
 # Reorder ls
 alias ls='ls -vN --color=auto --group-directories-first'
 
-# Load ssh secret key to memory
-eval $(keychain --quiet id_rsa ~/.ssh/id_rsa.pub)
+# Load ssh and gpg keys to memory
+eval $(keychain --agents ssh,gpg --quiet id_rsa ~/.ssh/id_rsa.pub)
+
+# Base16 Shell
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
