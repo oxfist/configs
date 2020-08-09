@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls='ls -vN --color=auto --group-directories-first'
 
 # Load ssh and gpg keys to memory
-eval $(keychain --agents ssh,gpg --quiet id_rsa ~/.ssh/id_rsa.pub)
+eval `keychain --agents ssh,gpg --eval --quiet id_rsa ~/.ssh/id_rsa.pub`
 
 # Base16 Shell
 # BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
