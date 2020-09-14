@@ -13,6 +13,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+Plug 'andymass/vim-matchup'
 call plug#end()
 
 """ CONFIG SECTION
