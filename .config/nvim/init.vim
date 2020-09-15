@@ -6,7 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'andymass/vim-matchup'
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 """ CONFIG SECTION
@@ -21,20 +22,33 @@ syntax enable
 set cursorline
 set number relativenumber
 set nu rnu
+set expandtab
+set tabstop=4
 colorscheme hybrid_reverse
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
+" JavaScript
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+let g:mta_filetypes = { 'html': 1, 'xml': 1, 'javascript': 1 }
+
+" Closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.html.erb"
+
+" fzf
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <C-p> :call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached'}))<CR>
+
+" NERDTree
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-graphql', 'coc-tabnine']
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-nnoremap <C-p> :FZF<CR>
+" nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -104,9 +118,9 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.notexists = '∄'
 
 " airline symbols
-let g:airline_left_sep = ''
+let g:airline_left_sep = '▶'
 let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+let g:airline_right_sep = '◀'
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
@@ -115,6 +129,8 @@ let g:airline_symbols.linenr = '☰'
 
 "" CUSTOM MAPPINGS
 inoremap kj <ESC>
+" Clears highlight after searching with ',' + '/'
+nmap <silent> ,/ :nohlsearch<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
