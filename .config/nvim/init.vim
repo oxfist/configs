@@ -1,24 +1,29 @@
 """ PLUGIN SECTION
 call plug#begin('~/.config/nvim/plugged')
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
 Plug 'andymass/vim-matchup'
 Plug 'alvan/vim-closetag'
+Plug 'frazrepo/vim-rainbow'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 "" CUSTOM MAPPINGS
 inoremap kj <ESC>
+inoremap <C-c> <ESC>
 " Clears highlight after searching with ',' + '/'
 nmap <silent> ,/ :nohlsearch<CR>
 map <C-h> <C-w>h
@@ -54,7 +59,19 @@ set number relativenumber
 set nu rnu
 set expandtab
 set tabstop=4
-colorscheme hybrid_reverse
+
+" Color theme
+let g:material_theme_style = 'ocean'
+let g:material_terminal_italics = 1
+colorscheme material
+" NOTE: rxvt-unicode-truecolors must be installed
+if (has("termguicolors"))
+   set termguicolors
+endif
+
+let g:rainbow_active = 1
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 " JavaScript
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
@@ -72,7 +89,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-graphql', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-graphql', 'coc-tabnine', 'coc-highlight']
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -130,6 +147,7 @@ endfunction
 
 " air-line
 " Enable Powerline fonts in order to display glyphs on Airline
+let g:airline_theme = 'material'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -172,12 +190,4 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-" NOTE: rxvt-unicode-truecolors must be installed
-if (has("termguicolors"))
-   set termguicolors
 endif
