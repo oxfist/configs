@@ -1,6 +1,5 @@
 [user]
     name = Andrés Quilodrán
-    email = andres.caro.q@gmail.com
 [github]
     user = oxfist
 [color]
@@ -16,6 +15,12 @@
 [credential]
     helper = cache --timeout=3600
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = input
     whitespace = cr-at-eol
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[cretendial]
+	helper = cache
