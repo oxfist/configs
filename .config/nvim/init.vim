@@ -69,6 +69,7 @@ set expandtab
 set tabstop=4
 set updatetime=100
 set scrolloff=5
+set mouse=a
 
 " Color theme
 let g:material_theme_style = 'ocean'
