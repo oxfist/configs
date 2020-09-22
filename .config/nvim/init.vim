@@ -15,10 +15,10 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 " End Syntax highlight
 Plug 'alvan/vim-closetag'
-Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -26,6 +26,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 "" CUSTOM MAPPINGS
@@ -67,6 +68,7 @@ set nu rnu
 set expandtab
 set tabstop=4
 set updatetime=100
+set scrolloff=5
 
 " Color theme
 let g:material_theme_style = 'ocean'
