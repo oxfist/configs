@@ -1,18 +1,21 @@
 """ PLUGIN SECTION
 call plug#begin('~/.config/nvim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'andymass/vim-matchup'
+" Syntax highlight
 Plug 'frazrepo/vim-rainbow'
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
+" End Syntax highlight
 Plug 'alvan/vim-closetag'
+Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -63,6 +66,7 @@ set number relativenumber
 set nu rnu
 set expandtab
 set tabstop=4
+set updatetime=100
 
 " Color theme
 let g:material_theme_style = 'ocean'
