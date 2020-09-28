@@ -3,7 +3,7 @@ Xft.dpi:                96
 Xft.antialias:          1
 Xft.rgba:               rgb
 Xft.hinting:            1
-Xft.hintstyle:          hintslight
+Xft.hintstyle:          full
 
 URxvt.termName:                 rxvt-256color
 URxvt*depth:                    32
@@ -16,15 +16,18 @@ URxvt*transpscrollbar:          true
 URxvt*saveLines:                32767
 URxvt*perl-lib:                 /usr/lib/urxvt/perl/
 URxvt.letterSpace:              0
-URxvt.perl-ext-common:          default,tabbedex,selection-to-clipboard
+URxvt.perl-ext-common:          default,tabbedex,selection-to-clipboard,font-size
 URxvt.tabbed.autohide:          true
 URxvt.tabbed.reopen-on-close:   yes
 URxvt.keysym.Control-t:         perl:tabbedex:new_tab
 URxvt.keysym.Control-Tab:       perl:tabbedex:next_tab
+URxvt.keysym.Control-minus:     perl:font-size:decrease
+URxvt.keysym.Control-plus:      perl:font-size:increase
+URxvt.font-size.step:           3
 URxvt*loginShell:               true
 
-URxvt*font:             xft:Monaco for Powerline:regular:pixelsize=14
-URxvt*boldFont:         xft:Monaco for Powerline:bold:pixelsize=14
+URxvt*font:             xft:Monaco Nerd Font Mono:regular:pixelsize=16
+URxvt*boldFont:         xft:Monaco Nerd Font Mono:bold:pixelsize=16
 
 URxvt*foreground:       #f2f2f2
 URxvt*background:       #101010
@@ -45,9 +48,9 @@ URxvt.matcher.button:   1
 
 *color0:  #2E3436
 *color1:  #df1a00
-*color2:  #4E9A06
+*color2:  #4E9006
 *color3:  #C4A000
-*color4:  #3465A4
+*color4:  #3465A0
 *color5:  #75507B
 *color6:  #ce5c00
 *color7:  #babdb9
