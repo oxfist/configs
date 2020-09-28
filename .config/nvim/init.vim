@@ -5,7 +5,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'andymass/vim-matchup'
 " Syntax highlight
@@ -57,6 +57,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -101,7 +104,6 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-graphql', 'coc-highlight']
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -186,6 +188,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 " let g:airline_symbols.linenr = '☰'
+
+" Coc
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-graphql', 'coc-highlight']
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
