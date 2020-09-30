@@ -190,7 +190,17 @@ let g:airline_symbols.linenr = '☰'
 " let g:airline_symbols.linenr = '☰'
 
 " Coc
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-graphql', 'coc-highlight']
+let g:coc_global_extensions = [
+            \'coc-css',
+            \'coc-emmet',
+            \'coc-graphql',
+            \'coc-highlight',
+            \'coc-html',
+            \'coc-json',
+            \'coc-prettier',
+            \'coc-tsserver',
+            \'coc-yaml'
+            \]
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
