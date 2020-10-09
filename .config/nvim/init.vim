@@ -91,6 +91,7 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 " JavaScript
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 let g:mta_filetypes = { 'html': 1, 'xml': 1, 'javascript': 1 }
 
 " Closetag
@@ -125,7 +126,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_highlight_on_keys = ['f', 'F']
 
 " set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " TextEdit might fail if hidden is not set.
 set hidden
