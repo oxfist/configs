@@ -195,13 +195,14 @@ let g:airline_right_sep = '◀'
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '☰ '
 " let g:airline_symbols.linenr = '☰'
 
 " Coc
 let g:coc_global_extensions = [
             \'coc-css',
             \'coc-emmet',
+            \'coc-eslint',
             \'coc-graphql',
             \'coc-highlight',
             \'coc-html',
