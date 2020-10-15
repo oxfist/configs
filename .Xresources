@@ -15,7 +15,7 @@ URxvt*scrollBar:                false
 URxvt*transpscrollbar:          true
 URxvt*saveLines:                32767
 URxvt*perl-lib:                 /usr/lib/urxvt/perl/
-URxvt.letterSpace:              0
+URxvt.letterSpace:              -1
 URxvt.perl-ext-common:          default,tabbedex,selection-to-clipboard,font-size
 URxvt.tabbed.autohide:          true
 URxvt.tabbed.reopen-on-close:   yes
