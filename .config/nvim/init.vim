@@ -78,6 +78,7 @@ set mouse=a
 " Color theme
 let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
+
 colorscheme material
 " NOTE: rxvt-unicode-truecolors must be installed
 if (has("termguicolors"))
@@ -212,6 +213,10 @@ let g:coc_global_extensions = [
             \'coc-yaml'
             \]
 
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+hi CocHighlightText ctermfg=231 guifg=#ffffff ctermbg=60 guibg=#df5f87
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -219,9 +224,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Color scheme config
 if (has("nvim"))
