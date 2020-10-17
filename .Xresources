@@ -1,5 +1,5 @@
 ! Xft settings
-Xft.dpi:                110
+Xft.dpi:                100
 Xft.antialias:          1
 Xft.rgba:               rgb
 Xft.hinting:            1
@@ -26,8 +26,8 @@ URxvt.keysym.Control-plus:      perl:font-size:increase
 URxvt.font-size.step:           3
 URxvt*loginShell:               true
 
-URxvt*font:             xft:Monaco Nerd Font Mono:regular:pixelsize=16
-URxvt*boldFont:         xft:Monaco Nerd Font Mono:bold:pixelsize=16
+URxvt*font:             xft:Monaco Nerd Font Mono:regular:size=12
+URxvt*boldFont:         xft:Monaco Nerd Font Mono:bold:size=12
 
 URxvt*foreground:       #f2f2f2
 URxvt*background:       #101010
