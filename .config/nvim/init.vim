@@ -80,7 +80,7 @@ let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
 
 colorscheme material
-" NOTE: rxvt-unicode-truecolors must be installed
+" NOTE: rxvt-unicode-truecolor must be installed to properly display colors
 if (has("termguicolors"))
    set termguicolors
 endif
