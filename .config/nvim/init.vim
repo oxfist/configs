@@ -74,11 +74,12 @@ set tabstop=4
 set updatetime=100
 set scrolloff=5
 set mouse=a
+set clipboard+=unnamedplus
+set autoindent smartindent
 
 " Color theme
 let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
-
 colorscheme material
 " NOTE: rxvt-unicode-truecolor must be installed to properly display colors
 if (has("termguicolors"))
@@ -198,6 +199,11 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰ '
 " let g:airline_symbols.linenr = '☰'
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Coc
 let g:coc_global_extensions = [
