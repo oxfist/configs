@@ -2,6 +2,16 @@
 
 Misc configurations.
 
+## Neovim
+
+1. Install `rxvt-unicode-truecolor`
+2. Install `vim-plug` by running:
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
 ## Install fonts
 
 1. Google Noto: package `noto-fonts`
