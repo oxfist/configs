@@ -9,7 +9,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'andymass/vim-matchup'
 " Syntax highlight
-Plug 'frazrepo/vim-rainbow'
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
@@ -81,6 +80,7 @@ set autoindent smartindent
 let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
 colorscheme material
+
 " NOTE: rxvt-unicode-truecolor must be installed to properly display colors
 if (has("termguicolors"))
    set termguicolors
