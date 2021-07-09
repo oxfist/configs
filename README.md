@@ -2,6 +2,11 @@
 
 Misc configurations.
 
+## Requirements
+
+- `curl`
+- Node 12.x
+
 ## Neovim
 
 1. Install `rxvt-unicode-truecolor`
