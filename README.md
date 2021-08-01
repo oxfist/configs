@@ -4,7 +4,15 @@ Misc configurations.
 
 ## Neovim
 
-1. Install `rxvt-unicode-truecolor`
+### Requirements
+
+- `curl`
+- Node 12.x
+- `rxvt-unicode-truecolor`
+
+### Installation
+
+1. Copy `nvim` folder to `~/.config/`
 2. Install `vim-plug` by running:
 
 ```
