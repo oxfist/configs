@@ -18,7 +18,7 @@ URxvt*perl-lib:                 /usr/lib/urxvt/perl/
 URxvt.letterSpace:              -1
 URxvt.perl-ext-common:          default,tabbedex,selection-to-clipboard,font-size
 URxvt.tabbed.autohide:          true
-URxvt.tabbed.reopen-on-close:   yes
+URxvt.tabbed.reopen-on-close:   no
 URxvt.keysym.Control-t:         perl:tabbedex:new_tab
 URxvt.keysym.Control-Tab:       perl:tabbedex:next_tab
 URxvt.keysym.Control-minus:     perl:font-size:decrease
