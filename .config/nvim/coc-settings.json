@@ -1,4 +1,8 @@
 {
-    "solargraph.diagnostics": true,
-    "eslint.autoFixOnSave": true
+  "solargraph.diagnostics": true,
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": ["jsx", "css", "html", "markdown"],
+  "yaml.schemas": {
+    "https://json.schemastore.org/gitlab-ci.json": [".gitlab-ci.yml"]
+  }
 }

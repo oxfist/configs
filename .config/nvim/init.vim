@@ -219,6 +219,8 @@ let g:coc_global_extensions = [
             \'coc-yaml'
             \]
 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 hi CocHighlightText ctermfg=231 guifg=#ffffff ctermbg=60 guibg=#df5f87
