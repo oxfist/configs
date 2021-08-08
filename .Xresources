@@ -50,7 +50,8 @@ URxvt.matcher.button:   1
 
 *color0:  #2E3436
 *color1:  #df1a00
-*color2:  #4E9006
+*color2:  #A0f750
+! *color2:  #4E9006
 *color3:  #C4A000
 *color4:  #3465A0
 *color5:  #75507B
