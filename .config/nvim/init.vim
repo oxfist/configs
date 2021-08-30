@@ -8,12 +8,15 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'andymass/vim-matchup'
+
 " Syntax highlight
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 " End Syntax highlight
+
 Plug 'alvan/vim-closetag'
+Plug 'dyng/ctrlsf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -38,6 +41,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+map <M-f> <Plug>CtrlSFPrompt
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -75,6 +79,8 @@ set scrolloff=5
 set mouse=a
 set clipboard+=unnamedplus
 set autoindent smartindent
+set tags=tags
+set path=.
 
 " Color theme
 let g:material_theme_style = 'ocean'
