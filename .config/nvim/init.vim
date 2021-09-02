@@ -17,7 +17,6 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'alvan/vim-closetag'
 Plug 'dyng/ctrlsf.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -220,6 +219,7 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-html',
             \'coc-json',
+            \'coc-pairs',
             \'coc-prettier',
             \'coc-tsserver',
             \'coc-yaml'
