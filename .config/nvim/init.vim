@@ -106,7 +106,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx,*.html.erb"
 
 " fzf
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-nnoremap <C-p> :call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached'}))<CR>
+nnoremap <C-p> :call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached --exclude ".yarn/cache"'}))<CR>
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
