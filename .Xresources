@@ -29,7 +29,7 @@ URxvt*loginShell:               true
 URxvt*font:             xft:Monaco Nerd Font Mono:regular:size=12
 URxvt*boldFont:         xft:Monaco Nerd Font Mono:bold:size=12
 URxvt*italicFont:       xft:Monaco Nerd Font Mono:italic:size=12
-URxvt*lineSpace:        1.5
+URxvt*lineSpace:        4
 
 URxvt*foreground:       #f2f2f2
 URxvt*background:       #101010
