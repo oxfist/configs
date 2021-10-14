@@ -34,6 +34,10 @@ call plug#end()
 "" CUSTOM MAPPINGS
 inoremap kj <ESC>
 inoremap <C-c> <ESC>
+inoremap {<CR> {<CR>}<Esc>O<BS><Tab>
+inoremap [<CR> [<CR>]<Esc>O<BS><Tab>
+inoremap (<CR> (<CR>)<Esc>O<BS><Tab>
+
 " Clears highlight after searching with ',' + '/'
 nmap <silent> ,/ :nohlsearch<CR>
 map <C-h> <C-w>h

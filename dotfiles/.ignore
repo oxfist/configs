@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/.yarn/cache
+.yarn/*
 /.pnp
 .pnp.js
 
@@ -34,3 +34,4 @@ yarn-error.log*
 # vercel
 .vercel
 package-lock.json
+yarn.lock
