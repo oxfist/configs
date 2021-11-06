@@ -1,4 +1,5 @@
 {
+  "diagnostic.warningSign": "",
   "solargraph.diagnostics": true,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
