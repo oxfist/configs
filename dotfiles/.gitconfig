@@ -18,9 +18,23 @@
     editor = nvim
     autocrlf = input
     whitespace = cr-at-eol
+    excludesFile = ~/.gitignore
 [commit]
-	gpgsign = true
+    gpgsign = true
 [tag]
-	forceSignAnnotated = true
+    forceSignAnnotated = true
 [cretendial]
-	helper = cache
+    helper = cache
+[init]
+    defaultBranch = main
+[gpg]
+    program = gpg
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    line-numbers = true
