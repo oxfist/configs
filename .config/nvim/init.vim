@@ -15,6 +15,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 " End Syntax highlight
 
+Plug 'APZelos/blamer.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'alvan/vim-closetag'
 Plug 'dyng/ctrlsf.vim'
@@ -137,8 +138,9 @@ let g:fzf_action = {
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Trigger a highlight only when pressing f and F.
-let g:qs_highlight_on_keys = ['f', 'F']
+" Blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
 
 " set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
