@@ -141,6 +141,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Blamer
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
+let g:blamer_show_in_visual_modes = 0
 
 " set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
