@@ -19,6 +19,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'alvan/vim-closetag'
 Plug 'dyng/ctrlsf.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
@@ -39,9 +40,9 @@ call plug#end()
 "" CUSTOM MAPPINGS
 inoremap kj <ESC>
 inoremap <C-c> <ESC>
-inoremap {<CR> {<CR>}<Esc>O<BS><Tab>
-inoremap [<CR> [<CR>]<Esc>O<BS><Tab>
-inoremap (<CR> (<CR>)<Esc>O<BS><Tab>
+" inoremap {<CR> {<CR>}<Esc>O<BS><Tab>
+" inoremap [<CR> [<CR>]<Esc>O<BS><Tab>
+" inoremap (<CR> (<CR>)<Esc>O<BS><Tab>
 
 " Clears highlight after searching with ',' + '/'
 nmap <silent> ,/ :nohlsearch<CR>
@@ -230,7 +231,6 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-html',
             \'coc-json',
-            \'coc-pairs',
             \'coc-prettier',
             \'coc-tsserver',
             \'coc-yaml'
