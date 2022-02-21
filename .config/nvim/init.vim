@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'navarasu/onedark.nvim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ryanoasis/vim-devicons'
@@ -40,9 +41,6 @@ call plug#end()
 "" CUSTOM MAPPINGS
 inoremap kj <ESC>
 inoremap <C-c> <ESC>
-" inoremap {<CR> {<CR>}<Esc>O<BS><Tab>
-" inoremap [<CR> [<CR>]<Esc>O<BS><Tab>
-" inoremap (<CR> (<CR>)<Esc>O<BS><Tab>
 
 " Clears highlight after searching with ',' + '/'
 nmap <silent> ,/ :nohlsearch<CR>
@@ -92,9 +90,10 @@ set tags=tags
 set path=.
 
 " Color theme
-let g:material_theme_style = 'ocean'
-let g:material_terminal_italics = 1
-colorscheme material
+let g:onedark_config = {
+   \ 'style': 'deep',
+\}
+colorscheme onedark
 
 " NOTE: rxvt-unicode-truecolor must be installed to properly display colors
 if (has("termguicolors"))
