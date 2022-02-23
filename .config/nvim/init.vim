@@ -2,9 +2,9 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'navarasu/onedark.nvim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
@@ -94,6 +94,12 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 
+" Quick-Scope
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+
 " NOTE: rxvt-unicode-truecolor must be installed to properly display colors
 if (has("termguicolors"))
    set termguicolors
@@ -132,10 +138,6 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
-
-" Quick-Scope
-" Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Blamer
 let g:blamer_enabled = 1
