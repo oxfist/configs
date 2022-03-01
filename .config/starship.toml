@@ -1,0 +1,32 @@
+add_newline = false
+right_format = "$status $cmd_duration"
+
+[username]
+show_always = true
+style_user = "#df005f"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+format = "[@](white)[$hostname](#df5f00)"
+
+[directory]
+format = " [$path](#87ff00)[$read_only]($read_only_style) " 
+
+[character]
+success_symbol = "[λ](white)"
+error_symbol = "[λ](bold red)"
+
+[git_branch]
+style = "#5fdfff"
+format = '[\(](white)[$symbol$branch]($style)[\)](white) '
+
+[cmd_duration]
+format = '[\($duration\)](blue)'
+min_time = 1_000
+show_milliseconds = true
+
+[status]
+disabled = false
+style = "red"
+format = "[$status]($style)"
