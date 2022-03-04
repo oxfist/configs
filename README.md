@@ -36,8 +36,13 @@ Development environment configurations.
 
 ## Install fonts
 
+Code:
+
 1. Source Code Pro with patched Nerd Fonts
-2. Google Noto: package `noto-fonts`
-3. Adobe Source Han Sans: package `adobe-source-han-sans-otc-fonts`
-4. Install [Monaco with patched in Nerd Font](https://github.com/Karmenzind/monaco-nerd-fonts) to properly display glyphs used by vim-airline and NERD Tree
-5. Roboto: package `ttf-roboto`
+2. [Monaco with patched Nerd Fonts](https://github.com/Karmenzind/monaco-nerd-fonts) (for glyphs in fish, `vim-airline`, and NERD Tree)
+
+Other serif and sans-serif fonts:
+
+1. Noto Sans (`noto-fonts`)
+2. Adobe Source Han Sans (`adobe-source-han-sans-otc-fonts`)
+3. Roboto (`ttf-roboto`)
