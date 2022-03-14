@@ -4,6 +4,7 @@
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "graphql",
     "html",
     "json",
     "jsonc",
@@ -11,6 +12,8 @@
     "javascriptreact",
     "jsx",
     "markdown",
+    "typescript",
+    "typescriptreact",
     "yaml"
   ],
   "yaml.schemas": {
