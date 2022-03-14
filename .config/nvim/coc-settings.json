@@ -1,6 +1,6 @@
 {
   "diagnostic.warningSign": "",
-  "solargraph.diagnostics": true,
+  // "solargraph.diagnostics": true,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
@@ -8,6 +8,7 @@
     "json",
     "jsonc",
     "javascript",
+    "javascriptreact",
     "jsx",
     "markdown",
     "yaml"

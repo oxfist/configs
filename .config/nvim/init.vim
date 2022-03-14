@@ -189,7 +189,7 @@ endfunction
 
 " air-line
 " Enable Powerline fonts in order to display glyphs on Airline
-let g:airline_theme = 'material'
+" let g:airline_theme = 'material'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
