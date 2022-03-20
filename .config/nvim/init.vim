@@ -1,38 +1,47 @@
 """ PLUGIN SECTION
 call plug#begin('~/.config/nvim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kristijanhusak/vim-hybrid-material'
 " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'navarasu/onedark.nvim'
+Plug 'artanikin/vim-synthwave84'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
 Plug 'andymass/vim-matchup'
 
-" Syntax highlight
-Plug 'yuezk/vim-js'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'sheerun/vim-polyglot'
-" End Syntax highlight
+if exists('g:vscode')
+    " VSCode extension
+else
+   Plug 'scrooloose/nerdtree'
+   Plug 'ryanoasis/vim-devicons'
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+   " Syntax highlight
+   Plug 'yuezk/vim-js'
+   Plug 'MaxMEllon/vim-jsx-pretty'
+   Plug 'sheerun/vim-polyglot'
+   " End Syntax highlight
+   Plug 'vim-airline/vim-airline'
+   Plug 'tpope/vim-eunuch'
+   Plug 'dyng/ctrlsf.vim'
+   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+   Plug 'junegunn/fzf.vim'
+endif
+
 
 Plug 'APZelos/blamer.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'alvan/vim-closetag'
-Plug 'dyng/ctrlsf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
-Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 call plug#end()
@@ -88,11 +97,16 @@ set autoindent smartindent
 set tags=tags
 set path=.
 
+if (has("termguicolors"))
+   set termguicolors
+endif
+
 " Color theme
 let g:onedark_config = {
    \ 'style': 'deep',
 \}
-colorscheme onedark
+" colorscheme onedark
+colorscheme nightfly
 
 " Quick-Scope
 " Trigger a highlight in the appropriate direction when pressing these keys:
@@ -101,9 +115,6 @@ highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=unde
 highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 
 " NOTE: rxvt-unicode-truecolor must be installed to properly display colors
-if (has("termguicolors"))
-   set termguicolors
-endif
 highlight CursorLineNr guifg=yellow
 
 let g:rainbow_active = 1
@@ -216,6 +227,8 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰ '
 " let g:airline_symbols.linenr = '☰'
+"
+let g:airline_theme='synthwave84'
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
