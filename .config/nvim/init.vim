@@ -96,6 +96,7 @@ set clipboard+=unnamedplus
 set autoindent smartindent
 set tags=tags
 set path=.
+au BufRead,BufNewFile .swcrc		set filetype=json
 
 if (has("termguicolors"))
    set termguicolors
