@@ -1,6 +1,1 @@
--- Enable 24bit true color
-vim.opt.termguicolors = true
-
-vim.cmd [[
-  colorscheme night-owl
-]]
+vim.cmd "colorscheme tokyonight"

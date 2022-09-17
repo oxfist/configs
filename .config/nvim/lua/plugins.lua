@@ -38,6 +38,28 @@ return packer.startup(function(use)
   -- Themes
   use "haishanh/night-owl.vim"
   use "folke/tokyonight.nvim"
+  use "lunarvim/horizon.nvim"
+
+  -- Language utilities
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
+
+  -- Better UX
+
+  --- cmp
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use "saadparwaiz1/cmp_luasnip"
+  use { 'David-Kunz/cmp-npm', requires = { 'nvim-lua/plenary.nvim' } }
+
+  --- Snippets
+  use({"L3MON4D3/LuaSnip", tag = "v1.*"}) -- Snipets
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
