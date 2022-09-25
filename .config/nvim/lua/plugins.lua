@@ -14,12 +14,12 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- Reload neovim when saving plugins.lua file
-vim.cmd [[
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+  augroup END
+]])
 
 -- Require packer under protected call to not error on first use
 local status_ok, packer = pcall(require, "packer")
@@ -41,17 +41,33 @@ return packer.startup(function(use)
   use "lunarvim/horizon.nvim"
 
   -- Language utilities
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  })
+  use "pangloss/vim-javascript"
+  use "maxmellon/vim-jsx-pretty"
 
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   -- Better UX
+
+  use "p00f/nvim-ts-rainbow"
+  use "nvim-treesitter/playground"
 
   --- cmp
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'

@@ -28,3 +28,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
+vim.cmd([[autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold ctermfg='yellow' guifg='yellow' ctermbg=NONE guibg=NONE]])
