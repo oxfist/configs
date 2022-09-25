@@ -6,4 +6,4 @@ require "completion"
 require "treesitter"
 require "rainbow"
 require "lsp"
-
+require "nvimtree" -- remove hyphen to avoid issues

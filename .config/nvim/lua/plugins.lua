@@ -41,13 +41,14 @@ return packer.startup(function(use)
   use "lunarvim/horizon.nvim"
 
   -- Language utilities
-  use({ "iamcco/markdown-preview.nvim",
+  use {
+    "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     setup = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
-  })
+  }
   use "pangloss/vim-javascript"
   use "maxmellon/vim-jsx-pretty"
 
@@ -63,6 +64,8 @@ return packer.startup(function(use)
 
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+  use "kyazdani42/nvim-web-devicons"
+  use { "kyazdani42/nvim-tree.lua", tag = "nightly" }
 
   --- cmp
   use "hrsh7th/nvim-cmp"
@@ -75,7 +78,7 @@ return packer.startup(function(use)
   use { 'David-Kunz/cmp-npm', requires = { 'nvim-lua/plenary.nvim' } }
 
   --- Snippets
-  use({"L3MON4D3/LuaSnip", tag = "v1.*"}) -- Snipets
+  use {"L3MON4D3/LuaSnip", tag = "v1.*"}  -- Snipets
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -19,6 +19,7 @@ keymap(NORMAL_MODE, "<C-h>", "<C-w>h", opts)
 keymap(NORMAL_MODE, "<C-j>", "<C-w>j", opts)
 keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
+keymap(NORMAL_MODE, "<Leader>e", ":NvimTreeToggle<CR>", opts)
 
 keymap(INSERT_MODE, "<C-p>", "", opts)
 keymap(INSERT_MODE, "<C-n>", "", opts)
