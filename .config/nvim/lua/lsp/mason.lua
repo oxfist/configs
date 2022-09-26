@@ -52,5 +52,10 @@ for _, server in pairs(LANGUAGE_SERVERS) do
 
   server = vim.split(server, "@")[1]
 
+  if server == "sumneko_lua" then
+    local sumneko_opts = require "lsp.settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+  end
+
   lspconfig[server].setup(opts)
 end
