@@ -53,8 +53,9 @@ return packer.startup(function(use)
   use "maxmellon/vim-jsx-pretty"
 
   -- LSP
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer"
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
