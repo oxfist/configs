@@ -3,8 +3,9 @@ if not status_ok then
   return
 end
 
-local status_ok, highlight = pcall(require, "nvim-treesitter.highlight")
-if not status_ok then
+-- TODO: fix unused highlight?
+local status_ok_highlight, highlight = pcall(require, "nvim-treesitter.highlight")
+if not status_ok_highlight then
   return
 end
 

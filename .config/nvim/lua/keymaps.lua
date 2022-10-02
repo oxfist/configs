@@ -6,9 +6,10 @@ local INSERT_MODE = "i"
 local VISUAL_MODE = "v"
 local ANY_MODE = ""
 
+local ENTER_KEY = "<CR>"
 local ESCAPE_KEY = "<ESC>"
-local SPACE_KEY = "<Space>"
 local RUN_CODE_KEY = "<F8>"
+local SPACE_KEY = "<Space>"
 
 keymap(ANY_MODE, SPACE_KEY, "<Nop>", opts)
 keymap(ANY_MODE, RUN_CODE_KEY, ":MarkdownPreview<CR>", opts)
@@ -19,7 +20,8 @@ keymap(NORMAL_MODE, "<C-h>", "<C-w>h", opts)
 keymap(NORMAL_MODE, "<C-j>", "<C-w>j", opts)
 keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
-keymap(NORMAL_MODE, "<Leader>e", ":NvimTreeToggle<CR>", opts)
+keymap(NORMAL_MODE, "<Leader>e", ":NvimTreeToggle"..ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files"..ENTER_KEY, opts)
 
 keymap(INSERT_MODE, "<C-p>", "", opts)
 keymap(INSERT_MODE, "<C-n>", "", opts)

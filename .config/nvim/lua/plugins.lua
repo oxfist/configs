@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
   use "kyazdani42/nvim-web-devicons"
   use { "kyazdani42/nvim-tree.lua", tag = "nightly" }
+  use "nvim-telescope/telescope.nvim"
 
   --- cmp
   use "hrsh7th/nvim-cmp"

@@ -45,7 +45,7 @@ mason_lspconfig.setup {
 }
 
 for _, server in pairs(LANGUAGE_SERVERS) do
-  opts = {
+  local opts = {
     on_attach = require("lsp.handlers").on_attach,
     capabilities = require("lsp.handlers").capabilities,
   }
