@@ -7,7 +7,6 @@ nvim_tree.setup {
   auto_reload_on_write = true,
   diagnostics = {
     enable = true,
-    show_on_dirs = true
   },
   disable_netrw = true,
   filters = {
