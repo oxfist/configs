@@ -1,3 +1,4 @@
+-- Setup in the following order as per: https://github.com/williamboman/mason-lspconfig.nvim#setup
 local status_ok, mason = pcall(require, "mason")
 if not status_ok then
 	return
