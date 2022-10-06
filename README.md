@@ -11,6 +11,8 @@ Development environment configurations.
 
 ## Neovim
 
+Neovim v0.8 is required.
+
 ### Requirements
 
 - `curl`
