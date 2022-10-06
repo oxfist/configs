@@ -6,7 +6,7 @@ Development environment configurations.
 
 ### Configuration
 
-1. Copy the `.config/fish` folder to `~/.config/`
+1. Copy `.config/fish` folder to `~/.config/`
 2. Copy `.config/starship.toml` to `~/.config/`
 
 ## Neovim
@@ -16,6 +16,7 @@ Development environment configurations.
 - `curl`
 - Node 12.x
 - `rxvt-unicode-truecolor` (Arch only)
+- [`prettierd`](https://github.com/fsouza/prettierd)
 
 ### Configuration
 
@@ -29,7 +30,7 @@ Development environment configurations.
 
 ## Command-line Utilities
 
-1. `nvm`: if using Fish, install via Oh-My-Fish
+1. `nvm`: if using Fish, [install wrapper via Oh-My-Fish](https://github.com/derekstavis/plugin-nvm)
 2. [`zoxide`](https://github.com/ajeetdsouza/zoxide)
 3. [`delta`](https://github.com/dandavison/delta)
 4. [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)

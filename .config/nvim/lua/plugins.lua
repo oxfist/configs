@@ -74,6 +74,7 @@ return packer.startup(function(use)
       require('Comment').setup()
     end
   }
+  use "jose-elias-alvarez/null-ls.nvim"
 
   --- cmp
   use "hrsh7th/nvim-cmp"

@@ -10,7 +10,7 @@ nvim_tree.setup {
   },
   disable_netrw = true,
   filters = {
-    dotfiles = true
+    dotfiles = false
   },
   hijack_netrw = true,
   open_on_setup = false,

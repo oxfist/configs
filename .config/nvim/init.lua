@@ -8,3 +8,4 @@ require "rainbow"
 require "lsp"
 require "nvimtree" -- remove hyphen to avoid issues
 require "autopairs"
+require "null_ls"
