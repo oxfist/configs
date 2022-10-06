@@ -7,8 +7,19 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- Make sure all binaries referenced below are installed
 local SOURCES = {
-  null_ls.builtins.formatting.prettierd
+  null_ls.builtins.formatting.prettierd,
+  null_ls.builtins.formatting.markdownlint
 }
+
+local lsp_formatting = function(bufnr)
+  -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+  vim.lsp.buf.format({
+    filter = function(client)
+      return client.name == "null-ls"
+    end,
+    bufnr = bufnr
+  })
+end
 
 null_ls.setup({
   sources = SOURCES,
@@ -19,8 +30,7 @@ null_ls.setup({
         group = augroup,
         buffer = bufnr,
         callback = function()
-          -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          vim.lsp.buf.format({ bufnr = bufnr })
+          lsp_formatting(bufnr)
         end,
       })
     end
