@@ -1,11 +1,11 @@
-require "base"
-require "keymaps"
-require "plugins"
-require "theme"
-require "completion"
-require "treesitter"
-require "rainbow"
-require "lsp"
-require "nvimtree" -- remove hyphen to avoid issues
-require "autopairs"
-require "null_ls"
+require("base")
+require("keymaps")
+require("plugins")
+require("theme")
+require("completion")
+require("treesitter")
+require("rainbow")
+require("lsp")
+require("nvimtree") -- remove hyphen to avoid issues
+require("autopairs")
+require("null_ls")

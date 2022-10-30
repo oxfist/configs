@@ -53,8 +53,6 @@ return packer.startup(function(use)
   use "maxmellon/vim-jsx-pretty"
 
   -- LSP
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -74,7 +72,10 @@ return packer.startup(function(use)
       require('Comment').setup()
     end
   }
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
+  use "jayp0521/mason-null-ls.nvim"
 
   --- cmp
   use "hrsh7th/nvim-cmp"

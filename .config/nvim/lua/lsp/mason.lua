@@ -18,15 +18,14 @@ local LANGUAGE_SERVERS = {
   "bashls",
   "cssls",
   "cssmodules_ls",
-  "eslint",
   "html",
   "jsonls",
-  "tsserver",
   "marksman",
-  "stylelint_lsp",
-  "tailwindcss",
   "rust_analyzer",
+  "stylelint_lsp",
   "sumneko_lua",
+  "tailwindcss",
+  "tsserver",
   "yamlls",
 }
 
@@ -42,7 +41,7 @@ mason.setup {
 
 mason_lspconfig.setup {
   ensure_installed = LANGUAGE_SERVERS,
-  automatic_installation = true
+  automatic_installation = true,
 }
 
 for _, server in pairs(LANGUAGE_SERVERS) do
@@ -56,6 +55,11 @@ for _, server in pairs(LANGUAGE_SERVERS) do
   if server == "sumneko_lua" then
     local sumneko_opts = require "lsp.settings.sumneko_lua"
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+  end
+
+  if server == "stylelint_lsp" then
+    local stylelint_opts = require "lsp.settings.stylelint_lsp"
+    opts = vim.tbl_deep_extend("force", stylelint_opts, opts)
   end
 
   lspconfig[server].setup(opts)
