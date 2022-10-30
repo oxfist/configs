@@ -17,11 +17,11 @@ local NULL_LS_SOURCES = {
   "markdownlint",
   "prettierd",
   "shellcheck",
-  "stylua"
+  "stylua",
 }
 
 mason_null_ls.setup({
-  ensure_installed = NULL_LS_SOURCES
+  ensure_installed = NULL_LS_SOURCES,
 })
 
 mason_null_ls.setup_handlers({
@@ -52,7 +52,7 @@ local lsp_formatting = function(bufnr)
     filter = function(client)
       return client.name == "null-ls"
     end,
-    bufnr = bufnr
+    bufnr = bufnr,
   })
 end
 

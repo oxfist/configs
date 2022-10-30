@@ -9,7 +9,7 @@ if not status_ok_highlight then
   return
 end
 
-configs.setup {
+configs.setup({
   ensure_installed = "all",
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing
@@ -32,5 +32,4 @@ configs.setup {
   playground = {
     enable = true,
   },
-}
-
+})

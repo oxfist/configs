@@ -1,7 +1,7 @@
 -- Setup in the following order as per: https://github.com/williamboman/mason-lspconfig.nvim#setup
 local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-	return
+  return
 end
 
 local status_ok_mason_config, mason_lspconfig = pcall(require, "mason-lspconfig")
@@ -29,20 +29,20 @@ local LANGUAGE_SERVERS = {
   "yamlls",
 }
 
-mason.setup {
+mason.setup({
   ui = {
     icons = {
       package_installed = "✓",
       package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
-}
+      package_uninstalled = "✗",
+    },
+  },
+})
 
-mason_lspconfig.setup {
+mason_lspconfig.setup({
   ensure_installed = LANGUAGE_SERVERS,
   automatic_installation = true,
-}
+})
 
 for _, server in pairs(LANGUAGE_SERVERS) do
   local opts = {
@@ -53,12 +53,12 @@ for _, server in pairs(LANGUAGE_SERVERS) do
   server = vim.split(server, "@")[1]
 
   if server == "sumneko_lua" then
-    local sumneko_opts = require "lsp.settings.sumneko_lua"
+    local sumneko_opts = require("lsp.settings.sumneko_lua")
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
   if server == "stylelint_lsp" then
-    local stylelint_opts = require "lsp.settings.stylelint_lsp"
+    local stylelint_opts = require("lsp.settings.stylelint_lsp")
     opts = vim.tbl_deep_extend("force", stylelint_opts, opts)
   end
 

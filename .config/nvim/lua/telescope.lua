@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
@@ -13,7 +13,7 @@ telescope.setup({
         ["<C-p>"] = actions.cycle_history_prev,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-      }
+      },
     },
-  }
+  },
 })

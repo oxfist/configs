@@ -1,6 +1,7 @@
 return {
   filetypes = {
-    'css', 'less', 'scss'
-  }
+    "css",
+    "less",
+    "scss",
+  },
 }
-

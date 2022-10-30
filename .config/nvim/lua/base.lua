@@ -31,4 +31,6 @@ vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
-vim.cmd([[autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold ctermfg='yellow' guifg='yellow' ctermbg=NONE guibg=NONE]])
+vim.cmd(
+  [[autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold ctermfg='yellow' guifg='yellow' ctermbg=NONE guibg=NONE]]
+)
