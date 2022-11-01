@@ -58,21 +58,17 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
+  use("nvim-treesitter/playground")
 
   -- Better UX
-
   use("p00f/nvim-ts-rainbow")
-  use("nvim-treesitter/playground")
+  use("nvim-treesitter/nvim-treesitter-context")
+  use("JoosepAlviste/nvim-ts-context-commentstring")
   use("kyazdani42/nvim-web-devicons")
   use({ "kyazdani42/nvim-tree.lua", tag = "nightly" })
   use("nvim-telescope/telescope.nvim")
   use("windwp/nvim-autopairs")
-  use({
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
-  })
+  use("numToStr/Comment.nvim")
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use("jose-elias-alvarez/null-ls.nvim")

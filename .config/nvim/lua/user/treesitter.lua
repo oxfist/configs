@@ -1,4 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+local status_ok, treesitter_configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   return
 end
@@ -9,7 +9,21 @@ if not status_ok_highlight then
   return
 end
 
-configs.setup({
+local status_ok_treesitter_context, treesitter_context = pcall(require, "treesitter-context")
+if not status_ok_treesitter_context then
+  return
+end
+
+local status_ok_comment, comment = pcall(require, "Comment")
+if not status_ok_comment then
+  return
+end
+
+treesitter_configs.setup({
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
   ensure_installed = "all",
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing
@@ -32,4 +46,10 @@ configs.setup({
   playground = {
     enable = true,
   },
+})
+
+treesitter_context.setup()
+
+comment.setup({
+  pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 })
