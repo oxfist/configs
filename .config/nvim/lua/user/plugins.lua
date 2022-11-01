@@ -78,6 +78,7 @@ return packer.startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
   use("lukas-reineke/indent-blankline.nvim")
+  use("lewis6991/gitsigns.nvim")
 
   --- cmp
   use("hrsh7th/nvim-cmp")
