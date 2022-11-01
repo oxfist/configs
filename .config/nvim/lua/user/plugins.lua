@@ -77,6 +77,7 @@ return packer.startup(function(use)
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
+  use("lukas-reineke/indent-blankline.nvim")
 
   --- cmp
   use("hrsh7th/nvim-cmp")

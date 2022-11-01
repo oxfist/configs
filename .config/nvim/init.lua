@@ -10,3 +10,4 @@ require("user.nvimtree") -- remove hyphen to avoid issues
 require("user.autopairs")
 require("user.null-ls")
 require("user.lualine")
+require("user.indent-blankline")
