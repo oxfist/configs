@@ -81,6 +81,7 @@ return packer.startup(function(use)
   use("lewis6991/gitsigns.nvim")
   use("RRethy/vim-illuminate")
   use("windwp/nvim-ts-autotag")
+  use({ "kylechui/nvim-surround", tag = "*" })
   use("jinh0/eyeliner.nvim")
 
   --- cmp
