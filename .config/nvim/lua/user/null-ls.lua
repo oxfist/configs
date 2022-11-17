@@ -18,6 +18,7 @@ local NULL_LS_SOURCES = {
   "prettierd",
   "shellcheck",
   "stylua",
+  "luacheck",
 }
 
 mason_null_ls.setup({
@@ -34,6 +35,9 @@ mason_null_ls.setup_handlers({
   markdownlint = function(source_name, methods)
     null_ls.register(null_ls.builtins.diagnostics.markdownlint)
     null_ls.register(null_ls.builtins.formatting.markdownlint)
+  end,
+  luacheck = function(source_name, methods)
+    null_ls.register(null_ls.builtins.diagnostics.luacheck)
   end,
   prettierd = function(source_name, methods)
     null_ls.register(null_ls.builtins.formatting.prettierd)
