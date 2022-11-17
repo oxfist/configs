@@ -10,7 +10,7 @@ end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
--- Make sure all binaries referenced below are installed
+-- IMPORTANT: Make sure all binaries referenced below are installed
 local NULL_LS_SOURCES = {
   "codespell",
   "eslint_d",

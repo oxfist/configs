@@ -21,6 +21,7 @@ keymap(NORMAL_MODE, "<C-j>", "<C-w>j", opts)
 keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
 keymap(NORMAL_MODE, "<Leader>e", ":NvimTreeToggle" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
 
 keymap(INSERT_MODE, "<C-p>", "", opts)
