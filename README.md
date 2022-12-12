@@ -1,36 +1,35 @@
-# Configs
+# ⚙️ Configs
 
 Development environment configurations.
 
-## Fish + Starship
+## 🐠🛸 Fish + Starship
 
-### Configuration
+### Set up
 
 1. Copy `.config/fish` folder to `~/.config/`
 2. Copy `.config/starship.toml` to `~/.config/`
 
-## Neovim
+## ✨ Neovim
 
-Neovim v0.8 is required.
+> ℹ️ Neovim v0.8 is required.
 
 ### Requirements
 
-- `curl`
-- Node 12.x
-- `rxvt-unicode-truecolor` (Arch only)
+- `rxvt-unicode-truecolor` (Linux only)
 - [`prettierd`](https://github.com/fsouza/prettierd)
+- [`eslint_d`](https://github.com/mantoni/eslint_d.js)
 
-### Configuration
+### 🚀 Set up Neovim
 
 1. Copy the `.config/nvim` folder to `~/.config/`
-2. Install `vim-plug` by running:
+2. Install `packer` by running:
 
    ```bash
-   sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+    ~/.local/share/nvim/site/pack/packer/start/packer.Neovim
    ```
 
-## Command-line Utilities
+## 📺 Command-line Utilities
 
 1. `nvm`: if using Fish, [install wrapper via Oh-My-Fish](https://github.com/derekstavis/plugin-nvm)
 2. [`zoxide`](https://github.com/ajeetdsouza/zoxide)
@@ -42,9 +41,9 @@ Neovim v0.8 is required.
 Code:
 
 1. Source Code Pro with patched Nerd Fonts
-2. [Monaco with patched Nerd Fonts](https://github.com/Karmenzind/monaco-nerd-fonts) (for glyphs in fish, `vim-airline`, and NERD Tree)
+2. [Monaco with patched Nerd Fonts](https://github.com/Karmenzind/monaco-nerd-fonts) (for glyphs in `fish` and `nvim-tree`)
 
-Other serif and sans-serif fonts:
+Other serif and sans-serif fonts (Linux only):
 
 1. Noto Sans (`noto-fonts`)
 2. Adobe Source Han Sans (`adobe-source-han-sans-otc-fonts`)
