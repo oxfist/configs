@@ -26,26 +26,26 @@ mason_null_ls.setup({
 })
 
 mason_null_ls.setup_handlers({
-  codespell = function(source_name, methods)
+  codespell = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.diagnostics.codespell)
   end,
-  eslint_d = function(source_name, methods)
+  eslint_d = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.diagnostics.eslint_d)
   end,
-  markdownlint = function(source_name, methods)
+  markdownlint = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.diagnostics.markdownlint)
     null_ls.register(null_ls.builtins.formatting.markdownlint)
   end,
-  luacheck = function(source_name, methods)
+  luacheck = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.diagnostics.luacheck)
   end,
-  prettierd = function(source_name, methods)
+  prettierd = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.formatting.prettierd)
   end,
-  shellcheck = function(source_name, methods)
+  shellcheck = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.diagnostics.shellcheck)
   end,
-  stylua = function(source_name, methods)
+  stylua = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.formatting.stylua)
   end,
 })

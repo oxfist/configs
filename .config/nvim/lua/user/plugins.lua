@@ -1,7 +1,9 @@
 -- Install packer automatically
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local packer_bootstrap
+
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = vim.fn.system({
+  packer_bootstrap = vim.fn.system({
     "git",
     "clone",
     "--depth",
@@ -97,7 +99,7 @@ return packer.startup(function(use)
   --- Snippets
   use({ "L3MON4D3/LuaSnip", tag = "v1.*" }) -- Snippets
 
-  if PACKER_BOOTSTRAP then
+  if packer_bootstrap then
     require("packer").sync()
   end
 end)
