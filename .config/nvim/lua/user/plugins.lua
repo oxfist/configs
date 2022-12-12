@@ -85,6 +85,7 @@ return packer.startup(function(use)
   use("windwp/nvim-ts-autotag")
   use({ "kylechui/nvim-surround", tag = "*" })
   use("jinh0/eyeliner.nvim")
+  use("b0o/schemastore.nvim")
 
   --- cmp
   use("hrsh7th/nvim-cmp")
