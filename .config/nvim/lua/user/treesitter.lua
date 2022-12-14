@@ -3,12 +3,6 @@ if not status_ok then
   return
 end
 
--- TODO: fix unused highlight?
-local status_ok_highlight, highlight = pcall(require, "nvim-treesitter.highlight")
-if not status_ok_highlight then
-  return
-end
-
 local status_ok_treesitter_context, treesitter_context = pcall(require, "treesitter-context")
 if not status_ok_treesitter_context then
   return
