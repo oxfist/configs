@@ -6,8 +6,8 @@ Development environment configurations.
 
 ### Set up
 
-1. Copy `.config/fish` folder to `~/.config/`
-2. Copy `.config/starship.toml` to `~/.config/`
+1. Copy `dotfiles/.config/fish` folder to `~/.config/`
+2. Copy `dotfiles/.config/starship.toml` to `~/.config/`
 
 ## ✨ Neovim
 
@@ -21,7 +21,7 @@ Development environment configurations.
 
 ### 🚀 Set up Neovim
 
-1. Copy the `.config/nvim` folder to `~/.config/`
+1. Copy the `dotfiles/.config/nvim` folder to `~/.config/`
 2. Install `packer` by running:
 
    ```bash
