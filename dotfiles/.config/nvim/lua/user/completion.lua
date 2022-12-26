@@ -3,12 +3,10 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
+local status_ok_luasnip, luasnip = pcall(require, "luasnip")
+if not status_ok_luasnip then
   return
 end
-
--- require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col(".") - 1

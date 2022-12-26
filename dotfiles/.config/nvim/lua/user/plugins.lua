@@ -100,6 +100,7 @@ return packer.startup(function(use)
 
   --- Snippets
   use({ "L3MON4D3/LuaSnip", tag = "v1.*" }) -- Snippets
+  use("rafamadriz/friendly-snippets")
 
   if packer_bootstrap then
     require("packer").sync()

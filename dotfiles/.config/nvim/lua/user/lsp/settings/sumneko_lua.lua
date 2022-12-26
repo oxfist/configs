@@ -1,8 +1,11 @@
 return {
   settings = {
     Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
       diagnostics = {
-        globals = { "vim" },
+        globals = { "vim", "pcall", "require", "table" },
       },
     },
   },
