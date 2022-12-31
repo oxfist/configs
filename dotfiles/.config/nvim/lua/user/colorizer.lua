@@ -6,6 +6,7 @@ end
 colorizer.setup({
   user_default_options = {
     RRGGBBAA = true,
+    rgb_fn = true,
   },
   filetypes = {
     "*",
