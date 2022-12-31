@@ -3,11 +3,6 @@ if not status_ok then
   return
 end
 
-local status_ok_treesitter_context, treesitter_context = pcall(require, "treesitter-context")
-if not status_ok_treesitter_context then
-  return
-end
-
 local status_ok_comment, comment = pcall(require, "Comment")
 if not status_ok_comment then
   return
@@ -26,7 +21,7 @@ treesitter_configs.setup({
     enable = true,
     enable_autocmd = false,
   },
-  ensure_installed = { "javascript", "html", "css", "rust", "typescript", "bash" },
+  ensure_installed = { "vim", "lua", "javascript", "html", "css", "rust", "typescript", "bash" },
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing
   rainbow = {

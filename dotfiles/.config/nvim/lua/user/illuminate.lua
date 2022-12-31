@@ -25,6 +25,7 @@ illuminate.configure({
     "DressingSelect",
     "TelescopePrompt",
   },
+  min_count_to_highlight = 2,
 })
 
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })

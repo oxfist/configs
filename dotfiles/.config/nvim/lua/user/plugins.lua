@@ -64,7 +64,7 @@ return packer.startup(function(use)
   })
   use("nvim-treesitter/playground")
 
-  -- Better UX
+  -- Better DX
   use("p00f/nvim-ts-rainbow")
   use("nvim-treesitter/nvim-treesitter-context")
   use("JoosepAlviste/nvim-ts-context-commentstring")
