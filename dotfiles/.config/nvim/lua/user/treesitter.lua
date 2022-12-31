@@ -14,6 +14,11 @@ if not status_ok_comment then
 end
 
 treesitter_configs.setup({
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = true,
+  },
+  indent = { enable = true, disable = { "yaml" } },
   autotag = {
     enable = true,
   },
@@ -21,18 +26,12 @@ treesitter_configs.setup({
     enable = true,
     enable_autocmd = false,
   },
-  ensure_installed = "all",
+  ensure_installed = { "javascript", "html", "css", "rust", "typescript", "bash" },
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = true,
-    -- disable = { "" }, -- Disable in these languages
-    additional_vim_regex_highlighting = true,
-  },
-  indent = { enable = true, disable = { "yaml" } },
   rainbow = {
     enable = true,
-    extended_mode = true,
+    extended_mode = false,
     max_file_lines = nil,
     colors = {
       "#ffd701", -- yellow from night-owl theme
@@ -43,9 +42,12 @@ treesitter_configs.setup({
   playground = {
     enable = true,
   },
+  query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = { "BufWrite", "CursorHold" },
+  },
 })
-
-treesitter_context.setup()
 
 comment.setup({
   pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),

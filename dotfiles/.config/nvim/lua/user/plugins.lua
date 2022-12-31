@@ -37,11 +37,6 @@ return packer.startup(function(use)
   use("nvim-lua/popup.nvim")
   use("nvim-lua/plenary.nvim")
 
-  -- Themes
-  use("~/Coding/night-owl.vim")
-  use("folke/tokyonight.nvim")
-  use("lunarvim/horizon.nvim")
-
   -- Language utilities
   use({
     "iamcco/markdown-preview.nvim",
@@ -53,6 +48,13 @@ return packer.startup(function(use)
   })
   use("pangloss/vim-javascript")
   use("maxmellon/vim-jsx-pretty")
+
+  -- Themes
+  use("~/Coding/night-owl.vim")
+  -- use("haishanh/night-owl.vim")
+  -- use("Julpikar/night-owl.nvim")
+  use("folke/tokyonight.nvim")
+  use("lunarvim/horizon.nvim")
 
   -- LSP
   use("neovim/nvim-lspconfig")
@@ -87,6 +89,7 @@ return packer.startup(function(use)
   use("jinh0/eyeliner.nvim")
   use("b0o/schemastore.nvim")
   use("stevearc/dressing.nvim")
+  use("NvChad/nvim-colorizer.lua")
 
   --- cmp
   use("hrsh7th/nvim-cmp")
