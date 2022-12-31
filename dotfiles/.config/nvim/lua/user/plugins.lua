@@ -90,6 +90,7 @@ return packer.startup(function(use)
   use("b0o/schemastore.nvim")
   use("stevearc/dressing.nvim")
   use("NvChad/nvim-colorizer.lua")
+  use("zbirenbaum/neodim")
 
   --- cmp
   use("hrsh7th/nvim-cmp")
