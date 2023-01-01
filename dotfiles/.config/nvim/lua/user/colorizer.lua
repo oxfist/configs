@@ -10,6 +10,12 @@ colorizer.setup({
   },
   filetypes = {
     "*",
+    javascript = {
+      names = false,
+    },
+    typescript = {
+      names = false,
+    },
     lua = {
       names = false,
     },
@@ -18,11 +24,10 @@ colorizer.setup({
       mode = "virtualtext",
       virtualtext = "◼︎",
     },
-    javascript = {
+    toml = {
       names = false,
-    },
-    typescript = {
-      names = false,
+      mode = "virtualtext",
+      virtualtext = "◼︎",
     },
   },
 })
