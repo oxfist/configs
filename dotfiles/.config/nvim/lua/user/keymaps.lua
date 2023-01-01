@@ -16,17 +16,21 @@ keymap(ANY_MODE, RUN_CODE_KEY, ":MarkdownPreview<CR>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap(NORMAL_MODE, "<C-d>", "<C-d>zz", opts)
+keymap(NORMAL_MODE, "<C-u>", "<C-u>zz", opts)
 keymap(NORMAL_MODE, "<C-h>", "<C-w>h", opts)
 keymap(NORMAL_MODE, "<C-j>", "<C-w>j", opts)
 keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
+keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<C-S-p>", ":Telescope commands" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>e", ":NvimTreeToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>t", ":TSHighlightCapturesUnderCursor" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>k", ":Telescope keymaps" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>p", ":TSPlaygroundToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
-keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
-keymap(NORMAL_MODE, "<C-S-p>", ":Telescope commands" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "n", "nzzzv", opts)
+keymap(NORMAL_MODE, "N", "Nzzzv", opts)
 
 keymap(INSERT_MODE, "<C-p>", "", opts)
 keymap(INSERT_MODE, "<C-n>", "", opts)
