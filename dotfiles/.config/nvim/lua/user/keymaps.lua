@@ -36,8 +36,10 @@ keymap(INSERT_MODE, "KJ", ESCAPE_KEY, opts)
 keymap(VISUAL_MODE, "<", "<gv", opts)
 keymap(VISUAL_MODE, ">", ">gv", opts)
 keymap(VISUAL_MODE, "p", '"_dP', opts)
+keymap(VISUAL_MODE, "J", ":m '>+1<CR>gv=gv", opts)
+keymap(VISUAL_MODE, "K", ":m '>-2<CR>gv=gv", opts)
 
--- Yes, we're just executing a bunch of Vimscript using vim.cmd
+-- LuaSnip keymaps
 vim.cmd([[
   " Use Tab to expand and jump through snippets
   imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
