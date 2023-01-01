@@ -21,6 +21,9 @@ keymap(NORMAL_MODE, "<C-j>", "<C-w>j", opts)
 keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
 keymap(NORMAL_MODE, "<Leader>e", ":NvimTreeToggle" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<Leader>t", ":TSHighlightCapturesUnderCursor" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<Leader>k", ":Telescope keymaps" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<Leader>p", ":TSPlaygroundToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
 
@@ -32,3 +35,14 @@ keymap(INSERT_MODE, "KJ", ESCAPE_KEY, opts)
 keymap(VISUAL_MODE, "<", "<gv", opts)
 keymap(VISUAL_MODE, ">", ">gv", opts)
 keymap(VISUAL_MODE, "p", '"_dP', opts)
+
+-- Yes, we're just executing a bunch of Vimscript using vim.cmd
+vim.cmd([[
+  " Use Tab to expand and jump through snippets
+  imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+  smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+  " Use Shift-Tab to jump backwards through snippets
+  imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+  smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+]])

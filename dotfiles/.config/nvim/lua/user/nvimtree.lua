@@ -16,4 +16,8 @@ nvim_tree.setup({
   hijack_netrw = true,
   open_on_setup = false,
   update_cwd = true,
+  git = {
+    enable = true,
+    ignore = false,
+  },
 })

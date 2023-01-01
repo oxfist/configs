@@ -8,13 +8,16 @@ if not status_ok_config then
   return
 end
 
+local status_ok_actions, actions = pcall(require, "telescope.actions")
+if not status_ok_actions then
+  return
+end
+
 local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
 
 table.insert(vimgrep_arguments, "--hidden")
 table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!**/.git/*")
-
-local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
