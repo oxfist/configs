@@ -26,6 +26,7 @@ keymap(NORMAL_MODE, "<Leader>k", ":Telescope keymaps" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>p", ":TSPlaygroundToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<C-S-p>", ":Telescope commands" .. ENTER_KEY, opts)
 
 keymap(INSERT_MODE, "<C-p>", "", opts)
 keymap(INSERT_MODE, "<C-n>", "", opts)
