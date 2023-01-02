@@ -25,6 +25,7 @@ local LANGUAGE_SERVERS = {
   "stylelint_lsp",
   "sumneko_lua",
   "tailwindcss",
+  "taplo",
   "tsserver",
   "yamlls",
 }

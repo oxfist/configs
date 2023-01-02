@@ -21,13 +21,9 @@ colorizer.setup({
     },
     yaml = {
       names = false,
-      mode = "virtualtext",
-      virtualtext = "◼︎",
     },
     toml = {
       names = false,
-      mode = "virtualtext",
-      virtualtext = "◼︎",
     },
   },
 })
