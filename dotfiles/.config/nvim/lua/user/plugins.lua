@@ -50,7 +50,7 @@ return packer.startup(function(use)
   use("maxmellon/vim-jsx-pretty")
 
   -- Themes
-  use("~/Coding/night-owl.vim")
+  use("~/Coding/night-owl.nvim/nightowl")
   -- use("haishanh/night-owl.vim")
   -- use("Julpikar/night-owl.nvim")
   use("folke/tokyonight.nvim")

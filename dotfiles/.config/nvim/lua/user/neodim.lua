@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 neodim.setup({
-  alpha = 0.6,
+  alpha = 0.7,
   hide = {
     signs = false,
   },

@@ -11,7 +11,7 @@ end
 treesitter_configs.setup({
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = false,
   },
   indent = { enable = true, disable = { "yaml" } },
   autotag = {
@@ -29,9 +29,9 @@ treesitter_configs.setup({
     extended_mode = false,
     max_file_lines = nil,
     colors = {
-      "#ffd701", -- yellow from night-owl theme
-      "#c792ea", -- purple form night-owl theme
-      "#82aaff", -- blue from night-owl theme
+      "#ffd602", -- yellow from night-owl theme
+      "#da70d6", -- purple form night-owl theme
+      "#169fff", -- blue from night-owl theme
     },
   },
   playground = {

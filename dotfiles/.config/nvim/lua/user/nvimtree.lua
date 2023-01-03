@@ -5,15 +5,16 @@ end
 
 nvim_tree.setup({
   auto_reload_on_write = true,
+  reload_on_bufenter = true,
   diagnostics = {
     enable = true,
   },
   disable_netrw = true,
+  hijack_netrw = true,
   filters = {
     dotfiles = false,
     custom = { "^.git$" },
   },
-  hijack_netrw = true,
   open_on_setup = false,
   update_cwd = true,
   git = {
