@@ -25,5 +25,8 @@ colorizer.setup({
     toml = {
       names = false,
     },
+    checkhealth = {
+      names = false,
+    },
   },
 })
