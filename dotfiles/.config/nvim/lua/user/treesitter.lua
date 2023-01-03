@@ -21,7 +21,20 @@ treesitter_configs.setup({
     enable = true,
     enable_autocmd = false,
   },
-  ensure_installed = { "vim", "lua", "javascript", "html", "css", "rust", "typescript", "bash" },
+  ensure_installed = {
+    "vim",
+    "lua",
+    "javascript",
+    "typescript",
+    "jsdoc",
+    "html",
+    "css",
+    "rust",
+    "bash",
+    "c",
+    "query",
+    "markdown",
+  },
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing
   rainbow = {
