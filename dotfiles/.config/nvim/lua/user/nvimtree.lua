@@ -21,4 +21,12 @@ nvim_tree.setup({
     enable = true,
     ignore = false,
   },
+  renderer = {
+    group_empty = true,
+    full_name = true,
+    highlight_git = true,
+  },
+  view = {
+    width = 35,
+  },
 })

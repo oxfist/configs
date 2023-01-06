@@ -24,6 +24,7 @@ illuminate.configure({
     "toggleterm",
     "DressingSelect",
     "TelescopePrompt",
+    "help",
   },
   min_count_to_highlight = 2,
 })
