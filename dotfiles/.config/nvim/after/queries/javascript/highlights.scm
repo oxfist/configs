@@ -66,3 +66,4 @@ operator: ("of") @operator.of
                     property: (property_identifier) @class.field.function
                     value: (arrow_function))))
 
+(null) @constant.builtin.null
