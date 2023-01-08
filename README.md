@@ -31,10 +31,11 @@ Development environment configurations.
 
 ## 📺 Command-line Utilities
 
-1. `nvm`: if using Fish, [install wrapper via Oh-My-Fish](https://github.com/derekstavis/plugin-nvm)
+1. 🐡 `nvm` – [wrapper via Fisher](https://github.com/jorgebucaran/nvm.fish)
 2. [`zoxide`](https://github.com/ajeetdsouza/zoxide)
 3. [`delta`](https://github.com/dandavison/delta)
 4. [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+5. `🐡 rvm` – run `./installscripts/rvm.fish`
 
 ## Install fonts
 
