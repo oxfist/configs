@@ -1,0 +1,81 @@
+{
+  "Lua.telemetry.enable": true,
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "MonoLisaVariable Nerd Font, Source Code Pro, Monaco Nerd Font, Monaco, Menlo, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "400",
+  "editor.formatOnSave": true,
+  "editor.glyphMargin": true,
+  "editor.lineNumbers": "relative",
+  "editor.mouseWheelZoom": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "window.zoomLevel": 0.1,
+  "files.trimTrailingWhitespace": true,
+  "redhat.telemetry.enabled": false,
+  "search.showLineNumbers": true,
+  "spaces-inside-braces.enableForBrackets": false,
+  "stylelint.packageManager": "yarn",
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.fontFamily": "MonoLisaVariable Nerd Font, Monaco Nerd Font, Monaco, Source Code Pro",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 4000,
+  "terminal.integrated.tabs.enabled": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.sneak": true,
+  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.panel.defaultLocation": "right",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "prettier.requireConfig": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.smoothScrolling": true,
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
+  "totalTypeScript.hiddenTips": [
+    "basic-types",
+    "typing-function-parameters",
+    "any-type",
+    "optional-object-property",
+    "variable-type-annotation",
+    "array-type",
+    "union-type",
+    "ts-object-type",
+    "undefined-keyword",
+    "literal-type",
+    "interface-declaration"
+  ],
+  "markdown.validate.unusedLinkDefinitions.enabled": "warning"
+}
