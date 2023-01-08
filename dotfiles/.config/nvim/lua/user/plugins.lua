@@ -51,6 +51,7 @@ return packer.startup(function(use)
 
   -- Themes
   use("~/Coding/night-owl.nvim/nightowl")
+  use("~/Coding/night-owl.vim")
   -- use("haishanh/night-owl.vim")
   -- use("Julpikar/night-owl.nvim")
   use("folke/tokyonight.nvim")

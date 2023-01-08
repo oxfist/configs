@@ -21,8 +21,10 @@ local LANGUAGE_SERVERS = {
   "html",
   "jsonls",
   "marksman",
+  "ruby_ls",
   "rust_analyzer",
   "stylelint_lsp",
+  "solargraph",
   "sumneko_lua",
   "tailwindcss",
   "taplo",
@@ -56,6 +58,11 @@ for _, server in pairs(LANGUAGE_SERVERS) do
   if server == "jsonls" then
     local jsonls_opts = require("user.lsp.settings.jsonls")
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+  end
+
+  if server == "ruby_ls" then
+    local rubyls_opts = require("user.lsp.settings.ruby_ls")
+    opts = vim.tbl_deep_extend("force", rubyls_opts, opts)
   end
 
   if server == "sumneko_lua" then

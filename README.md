@@ -42,7 +42,8 @@ Development environment configurations.
 Code:
 
 1. Source Code Pro with patched Nerd Fonts
-2. [Monaco with patched Nerd Fonts](https://github.com/Karmenzind/monaco-nerd-fonts) (for glyphs in `fish` and `nvim-tree`)
+2. [Monaco with patched Nerd Fonts](https://github.com/Karmenzind/monaco-nerd-fonts)
+   (for glyphs in `fish` and `nvim-tree`)
 
 Other serif and sans-serif fonts (Linux only):
 

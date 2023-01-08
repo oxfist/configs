@@ -25,7 +25,13 @@ colorizer.setup({
     toml = {
       names = false,
     },
+    make = {
+      names = false,
+    },
     checkhealth = {
+      names = false,
+    },
+    mason = {
       names = false,
     },
   },

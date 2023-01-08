@@ -34,6 +34,7 @@ treesitter_configs.setup({
     "c",
     "query",
     "markdown",
+    "ruby",
   },
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing

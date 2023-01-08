@@ -1,8 +1,3 @@
--- Set color for current line number
--- vim.cmd(
---   [[autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold ctermfg='yellow' guifg='yellow' ctermbg=NONE guibg=NONE]]
--- )
-
 vim.cmd([[autocmd BufWritePost ~/Coding/night-owl.nvim/night-owl.toml :!colorgen-nvim night-owl.toml]])
 
 -- vim.cmd("colorscheme night-owl")

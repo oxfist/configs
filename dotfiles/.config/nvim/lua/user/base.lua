@@ -30,3 +30,8 @@ vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  pattern = "Brewfile",
+  command = "set filetype=ruby",
+})
