@@ -1,40 +1,47 @@
 [user]
-    name = Andrés Quilodrán
+  name = Andrés Quilodrán
 [github]
-    user = oxfist
+  user = oxfist
 [color]
-    ui = true
+  ui = true
 [alias]
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    lg = log --pretty=format:"%C(red)%h%x09%C(yellow)%an%x09%C(green)%s" --abbrev-commit --branches=* --graph --decorate --all
-    lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  ch = cherry-pick
+  sh = show
+  df = diff
+  dd = diff --cached
+  lg = log --pretty=format:"%C(red)%h%x09%C(yellow)%an%x09%C(green)%s" --abbrev-commit --branches=* --graph --decorate --all
+  lol = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [credential]
-    helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [core]
-    editor = nvim
-    autocrlf = input
-    whitespace = cr-at-eol
-    excludesFile = ~/.gitignore
+  editor = nvim
+  autocrlf = input
+  whitespace = cr-at-eol
+  excludesFile = ~/.gitignore_global
 [commit]
-    gpgsign = true
+  gpgsign = true
 [tag]
-    forceSignAnnotated = true
+  forceSignAnnotated = true
 [cretendial]
-    helper = cache
+  helper = cache
 [init]
-    defaultBranch = main
+  defaultBranch = main
 [gpg]
-    program = gpg
+  program = gpg
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
-    line-numbers = true
+  line-numbers = true
+[includeIf "gitdir:~/Coding/example/"]
+  path = ~/.gitconfig-example
+[push]
+	autoSetupRemote = true
