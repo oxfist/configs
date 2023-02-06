@@ -18,7 +18,9 @@ success_symbol = "[λ](white)"
 error_symbol = "[λ](bold red)"
 
 [git_branch]
-style = "#5fdfff"
+symbol = " "
+# style = "#5fdfff"
+style = "bold purple"
 format = '[\(](white)[$symbol$branch]($style)[\)](white) '
 
 [cmd_duration]
@@ -30,3 +32,6 @@ show_milliseconds = true
 disabled = false
 style = "red"
 format = "[$status]($style)"
+
+[lua]
+symbol = " "

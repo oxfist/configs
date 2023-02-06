@@ -14,6 +14,11 @@ if not status_ok_lsp_config then
   return
 end
 
+local status_ok_windows, windows = pcall(require, "lspconfig.ui.windows")
+if not status_ok_windows then
+  return
+end
+
 local LANGUAGE_SERVERS = {
   "bashls",
   "cssls",
@@ -34,6 +39,7 @@ local LANGUAGE_SERVERS = {
 
 mason.setup({
   ui = {
+    border = "rounded",
     icons = {
       package_installed = "✓",
       package_pending = "➜",
@@ -46,6 +52,8 @@ mason_lspconfig.setup({
   ensure_installed = LANGUAGE_SERVERS,
   automatic_installation = true,
 })
+
+windows.default_options.border = "rounded"
 
 for _, server in pairs(LANGUAGE_SERVERS) do
   local opts = {
@@ -75,5 +83,6 @@ for _, server in pairs(LANGUAGE_SERVERS) do
     opts = vim.tbl_deep_extend("force", stylelint_opts, opts)
   end
 
+  -- Set up each LSP server
   lspconfig[server].setup(opts)
 end

@@ -4,6 +4,7 @@
   "editor.cursorSmoothCaretAnimation": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "MonoLisaVariable Nerd Font, Source Code Pro, Monaco Nerd Font, Monaco, Menlo, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": "400",
   "editor.formatOnSave": true,
@@ -25,8 +26,9 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "terminal.integrated.fontFamily": "MonoLisaVariable Nerd Font, Monaco Nerd Font, Monaco, Source Code Pro",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontFamily": "MonoLisaLigatures Nerd Font, Monaco Nerd Font, Monaco, Source Code Pro",
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.scrollback": 4000,
   "terminal.integrated.tabs.enabled": false,
   "vim.insertModeKeyBindings": [

@@ -12,7 +12,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- IMPORTANT: Make sure all binaries referenced below are installed
 local NULL_LS_SOURCES = {
-  "codespell",
   "eslint_d",
   "markdownlint",
   "prettierd",
@@ -26,9 +25,6 @@ mason_null_ls.setup({
 })
 
 mason_null_ls.setup_handlers({
-  codespell = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.diagnostics.codespell)
-  end,
   eslint_d = function(_source_name, _methods)
     null_ls.register(null_ls.builtins.diagnostics.eslint_d)
   end,

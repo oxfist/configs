@@ -10,6 +10,9 @@ colorizer.setup({
   },
   filetypes = {
     "*",
+    json = {
+      names = false,
+    },
     javascript = {
       names = false,
     },

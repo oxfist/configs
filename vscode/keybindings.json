@@ -1,23 +1,26 @@
-// Place your key bindings in this file to override the defaults
 [
   {
     "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft",
-    "when": "vim.mode != 'Insert'"
+    "when": "neovim.mode != insert",
+    "command": "workbench.action.navigateLeft"
   },
   {
     "key": "ctrl+l",
-    "command": "workbench.action.navigateRight",
-    "when": "vim.mode != 'Insert'"
+    "when": "neovim.mode != insert && !terminalFocus",
+    "command": "workbench.action.navigateRight"
   },
   {
     "key": "ctrl+k",
-    "command": "workbench.action.navigateUp",
-    "when": "vim.mode != 'Insert'"
+    "when": "neovim.mode != insert",
+    "command": "workbench.action.navigateUp"
   },
   {
     "key": "ctrl+j",
-    "command": "workbench.action.navigateDown",
-    "when": "vim.mode != 'Insert'"
+    "when": "neovim.mode != insert",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "cmd+alt+shift+i",
+    "command": "editor.action.inspectTMScopes"
   }
 ]
