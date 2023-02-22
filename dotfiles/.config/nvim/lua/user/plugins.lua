@@ -46,8 +46,6 @@ return packer.startup(function(use)
     end,
     ft = { "markdown" },
   })
-  use("pangloss/vim-javascript")
-  use("maxmellon/vim-jsx-pretty")
 
   -- Themes
   use("~/Coding/night-owl.nvim/nightowl")
