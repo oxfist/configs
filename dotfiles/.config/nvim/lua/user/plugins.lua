@@ -64,7 +64,7 @@ return packer.startup(function(use)
   use("nvim-treesitter/playground")
 
   -- Better DX
-  use("p00f/nvim-ts-rainbow")
+  use("mrjones2014/nvim-ts-rainbow")
   use("nvim-treesitter/nvim-treesitter-context")
   use("JoosepAlviste/nvim-ts-context-commentstring")
   use("kyazdani42/nvim-web-devicons")
@@ -89,7 +89,7 @@ return packer.startup(function(use)
   use("b0o/schemastore.nvim")
   use("stevearc/dressing.nvim")
   use("NvChad/nvim-colorizer.lua")
-  use("zbirenbaum/neodim")
+  use({ "zbirenbaum/neodim", event = "LspAttach" })
 
   --- cmp
   use("hrsh7th/nvim-cmp")

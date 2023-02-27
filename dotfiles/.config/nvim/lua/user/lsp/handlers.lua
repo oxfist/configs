@@ -27,22 +27,22 @@ local function lsp_keymaps(bufnr)
 end
 
 M.setup = function()
-  local signs = {
+  local diagnostics_signs = {
     { name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
     { name = "DiagnosticSignInfo", text = "" },
   }
 
-  for _, sign in ipairs(signs) do
+  for _, sign in ipairs(diagnostics_signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
-  local config = {
+  local diagnosticsConfig = {
     virtual_text = false,
     -- show signs
     signs = {
-      active = signs,
+      active = diagnostics_signs,
     },
     update_in_insert = true,
     underline = true,
@@ -57,7 +57,7 @@ M.setup = function()
     },
   }
 
-  vim.diagnostic.config(config)
+  vim.diagnostic.config(diagnosticsConfig)
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",

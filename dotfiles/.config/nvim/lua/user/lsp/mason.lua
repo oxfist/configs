@@ -56,7 +56,7 @@ mason_lspconfig.setup({
 windows.default_options.border = "rounded"
 
 for _, server in pairs(LANGUAGE_SERVERS) do
-  local opts = {
+  local lsp_opts = {
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
   }
@@ -65,24 +65,24 @@ for _, server in pairs(LANGUAGE_SERVERS) do
 
   if server == "jsonls" then
     local jsonls_opts = require("user.lsp.settings.jsonls")
-    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+    lsp_opts = vim.tbl_deep_extend("force", jsonls_opts, lsp_opts)
   end
 
   if server == "ruby_ls" then
     local rubyls_opts = require("user.lsp.settings.ruby_ls")
-    opts = vim.tbl_deep_extend("force", rubyls_opts, opts)
+    lsp_opts = vim.tbl_deep_extend("force", rubyls_opts, lsp_opts)
   end
 
   if server == "lua_ls" then
     local lua_ls_opts = require("user.lsp.settings.lua_ls")
-    opts = vim.tbl_deep_extend("force", lua_ls_opts, opts)
+    lsp_opts = vim.tbl_deep_extend("force", lua_ls_opts, lsp_opts)
   end
 
   if server == "stylelint_lsp" then
     local stylelint_opts = require("user.lsp.settings.stylelint_lsp")
-    opts = vim.tbl_deep_extend("force", stylelint_opts, opts)
+    lsp_opts = vim.tbl_deep_extend("force", stylelint_opts, lsp_opts)
   end
 
   -- Set up each LSP server
-  lspconfig[server].setup(opts)
+  lspconfig[server].setup(lsp_opts)
 end
