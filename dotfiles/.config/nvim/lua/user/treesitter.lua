@@ -34,8 +34,10 @@ treesitter_configs.setup({
     "c",
     "query",
     "markdown",
+    "markdown_inline",
     "ruby",
     "json",
+    "graphql",
   },
   sync_install = false,
   -- ignore_install = { "" }, -- List of parsers to ignore installing

@@ -29,7 +29,18 @@ nvim_tree.setup({
     group_empty = true,
     full_name = true,
     highlight_git = true,
-    highlight_opened_files = "icon",
+    highlight_opened_files = "all",
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = "│",
+        edge = "│",
+        item = "│",
+        bottom = "─",
+        none = " ",
+      },
+    },
   },
   view = {
     width = 35,
