@@ -2,6 +2,13 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local packer_bootstrap
 
+-- Require packer under protected call to not error on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  print("packer is not installed!")
+  return
+end
+
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   packer_bootstrap = vim.fn.system({
     "git",
@@ -12,7 +19,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     install_path,
   })
   print("Installing packer 💾... please close and reopen neovim.")
-  vim.cmd([[packadd packer.nvim]])
+  vim.cmd([[ packadd packer.nvim ]])
 end
 
 -- Reload neovim when saving plugins.lua file
@@ -22,13 +29,6 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup END
 ]])
-
--- Require packer under protected call to not error on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  print("packer is not installed!")
-  return
-end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
@@ -102,7 +102,7 @@ return packer.startup(function(use)
   use({ "David-Kunz/cmp-npm", requires = { "nvim-lua/plenary.nvim" } })
 
   --- Snippets
-  use({ "L3MON4D3/LuaSnip", tag = "v1.*" }) -- Snippets
+  use("L3MON4D3/LuaSnip") -- Snippets
   use("rafamadriz/friendly-snippets")
 
   if packer_bootstrap then
