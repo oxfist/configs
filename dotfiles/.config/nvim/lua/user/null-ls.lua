@@ -22,28 +22,27 @@ local NULL_LS_SOURCES = {
 
 mason_null_ls.setup({
   ensure_installed = NULL_LS_SOURCES,
-})
-
-mason_null_ls.setup_handlers({
-  eslint_d = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.diagnostics.eslint_d)
-  end,
-  markdownlint = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.diagnostics.markdownlint)
-    null_ls.register(null_ls.builtins.formatting.markdownlint)
-  end,
-  luacheck = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.diagnostics.luacheck)
-  end,
-  prettierd = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.formatting.prettierd)
-  end,
-  shellcheck = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.diagnostics.shellcheck)
-  end,
-  stylua = function(_source_name, _methods)
-    null_ls.register(null_ls.builtins.formatting.stylua)
-  end,
+  handlers = {
+    eslint_d = function(_source_name, _methods)
+      null_ls.register(null_ls.builtins.diagnostics.eslint_d)
+    end,
+    markdownlint = function(_source_name, _methods)
+      null_ls.register(null_ls.builtins.diagnostics.markdownlint)
+      null_ls.register(null_ls.builtins.formatting.markdownlint)
+    end,
+    luacheck = function(_source_name, _methods)
+      null_ls.register(null_ls.builtins.diagnostics.luacheck)
+    end,
+    prettierd = function(_source_name, _methods)
+      null_ls.register(null_ls.builtins.formatting.prettierd)
+    end,
+    shellcheck = function(_source_name, _methods)
+      null_ls.register(null_ls.builtins.diagnostics.shellcheck)
+    end,
+    stylua = function(_source_name, _methods)
+      null_ls.register(null_ls.builtins.formatting.stylua)
+    end,
+  }
 })
 
 local lsp_formatting = function(bufnr)
