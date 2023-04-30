@@ -49,11 +49,6 @@ return packer.startup(function(use)
 
   -- Themes
   use("oxfist/night-owl.nvim")
-  -- use("~/Coding/night-owl.nvim/night-owl")
-  -- use("haishanh/night-owl.vim")
-  -- use("Julpikar/night-owl.nvim")
-  -- use("folke/tokyonight.nvim")
-  -- use("lunarvim/horizon.nvim")
 
   -- LSP
   use("neovim/nvim-lspconfig")
@@ -102,7 +97,7 @@ return packer.startup(function(use)
   use({ "David-Kunz/cmp-npm", requires = { "nvim-lua/plenary.nvim" } })
 
   --- Snippets
-  use("L3MON4D3/LuaSnip") -- Snippets
+  use("L3MON4D3/LuaSnip")
   use("rafamadriz/friendly-snippets")
 
   if packer_bootstrap then
