@@ -34,6 +34,7 @@ local LANGUAGE_SERVERS = {
   "tailwindcss",
   "taplo",
   "tsserver",
+  "vimls",
   "yamlls",
 }
 

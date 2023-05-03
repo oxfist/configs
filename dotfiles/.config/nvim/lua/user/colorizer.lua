@@ -10,32 +10,15 @@ colorizer.setup({
   },
   filetypes = {
     "*",
-    json = {
-      names = false,
-    },
-    javascript = {
-      names = false,
-    },
-    typescript = {
-      names = false,
-    },
-    lua = {
-      names = false,
-    },
-    yaml = {
-      names = false,
-    },
-    toml = {
-      names = false,
-    },
-    make = {
-      names = false,
-    },
-    checkhealth = {
-      names = false,
-    },
-    mason = {
-      names = false,
-    },
+    checkhealth = { names = false },
+    javascript = { names = false },
+    json = { names = false },
+    lua = { names = false },
+    make = { names = false },
+    mason = { names = false },
+    toml = { names = false },
+    typescript = { names = false },
+    yaml = { names = false },
+    vim = { names = false },
   },
 })
