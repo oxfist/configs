@@ -1,4 +1,17 @@
--- Install packer automatically
+local function isPackerNotInstalled(path)
+  return vim.fn.empty(vim.fn.glob(path)) > 0
+end
+
+local function reloadNnvimWhenSavingPlugins()
+  vim.cmd([[
+    augroup packer_user_config
+      autocmd!
+      autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup END
+  ]])
+end
+
+-- Packer installation path for auto-install logic
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local packer_bootstrap
 
@@ -9,7 +22,7 @@ if not status_ok then
   return
 end
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+if isPackerNotInstalled(install_path) then
   packer_bootstrap = vim.fn.system({
     "git",
     "clone",
@@ -22,13 +35,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd([[ packadd packer.nvim ]])
 end
 
--- Reload neovim when saving plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup END
-]])
+reloadNnvimWhenSavingPlugins()
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
