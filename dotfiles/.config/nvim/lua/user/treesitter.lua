@@ -36,6 +36,7 @@ treesitter_configs.setup({
     "query",
     "ruby",
     "rust",
+    "toml",
     "typescript",
     "vim",
   },
