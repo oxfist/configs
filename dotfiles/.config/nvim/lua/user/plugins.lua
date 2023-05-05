@@ -2,7 +2,7 @@ local function isPackerNotInstalled(path)
   return vim.fn.empty(vim.fn.glob(path)) > 0
 end
 
-local function reloadNnvimWhenSavingPlugins()
+local function reloadNvimWhenSavingPlugins()
   vim.cmd([[
     augroup packer_user_config
       autocmd!
@@ -35,7 +35,7 @@ if isPackerNotInstalled(install_path) then
   vim.cmd([[ packadd packer.nvim ]])
 end
 
-reloadNnvimWhenSavingPlugins()
+reloadNvimWhenSavingPlugins()
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
