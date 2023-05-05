@@ -65,6 +65,20 @@ return packer.startup(function(use)
   })
   use("nvim-treesitter/playground")
 
+  --- cmp
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-nvim-lua")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("saadparwaiz1/cmp_luasnip")
+  use({ "David-Kunz/cmp-npm", requires = { "nvim-lua/plenary.nvim" } })
+
+  --- Snippets
+  use("L3MON4D3/LuaSnip")
+  use("rafamadriz/friendly-snippets")
+
   -- Better DX
   use("mrjones2014/nvim-ts-rainbow")
   use("nvim-treesitter/nvim-treesitter-context")
@@ -92,20 +106,7 @@ return packer.startup(function(use)
   use("stevearc/dressing.nvim")
   use("NvChad/nvim-colorizer.lua")
   use({ "zbirenbaum/neodim", event = "LspAttach" })
-
-  --- cmp
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-nvim-lua")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-cmdline")
-  use("saadparwaiz1/cmp_luasnip")
-  use({ "David-Kunz/cmp-npm", requires = { "nvim-lua/plenary.nvim" } })
-
-  --- Snippets
-  use("L3MON4D3/LuaSnip")
-  use("rafamadriz/friendly-snippets")
+  use("folke/trouble.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

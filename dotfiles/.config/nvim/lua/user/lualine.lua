@@ -52,6 +52,28 @@ lualine.setup({
   options = {
     theme = night_owl,
   },
+  sections = {
+    lualine_b = {
+      {
+        "branch",
+      },
+      {
+        "diff",
+      },
+      {
+        "diagnostics",
+        symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      },
+    },
+    lualine_c = {
+      {
+        "filename",
+      },
+      {
+        "filesize",
+      },
+    },
+  },
   extensions = {
     "nvim-tree",
   },
