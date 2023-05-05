@@ -105,7 +105,6 @@ return packer.startup(function(use)
   use("b0o/schemastore.nvim")
   use("stevearc/dressing.nvim")
   use("NvChad/nvim-colorizer.lua")
-  use({ "zbirenbaum/neodim", event = "LspAttach" })
   use("folke/trouble.nvim")
 
   if packer_bootstrap then
