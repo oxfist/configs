@@ -18,6 +18,7 @@ illuminate.configure({
     "lir",
     "neogitstatus",
     "packer",
+    "qf",
     "spectre_panel",
     "toggleterm",
     "DressingSelect",

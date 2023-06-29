@@ -2,7 +2,7 @@ local function isPackerNotInstalled(path)
   return vim.fn.empty(vim.fn.glob(path)) > 0
 end
 
-local function reloadNvimWhenSavingPlugins()
+local function reloadNvimWhenSavingPluginsFile()
   vim.cmd([[
     augroup packer_user_config
       autocmd!
@@ -35,7 +35,7 @@ if isPackerNotInstalled(install_path) then
   vim.cmd([[ packadd packer.nvim ]])
 end
 
-reloadNvimWhenSavingPlugins()
+reloadNvimWhenSavingPluginsFile()
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
@@ -106,6 +106,17 @@ return packer.startup(function(use)
   use("stevearc/dressing.nvim")
   use("NvChad/nvim-colorizer.lua")
   use("folke/trouble.nvim")
+  use("simrat39/symbols-outline.nvim")
+  use({
+    "akinsho/toggleterm.nvim",
+    tag = "*",
+    config = function()
+      require("toggleterm").setup()
+    end,
+  })
+
+  -- Misc
+  use("j-hui/fidget.nvim")
 
   if packer_bootstrap then
     require("packer").sync()
