@@ -114,6 +114,7 @@ return packer.startup(function(use)
       require("toggleterm").setup()
     end,
   })
+  use("nvim-pack/nvim-spectre")
 
   -- Misc
   use("j-hui/fidget.nvim")

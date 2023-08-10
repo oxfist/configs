@@ -12,6 +12,7 @@ illuminate.configure({
   delay = 200,
   filetypes_denylist = {
     "alpha",
+    "checkhealth",
     "dirvish",
     "fugitive",
     "help",

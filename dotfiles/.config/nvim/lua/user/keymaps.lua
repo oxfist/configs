@@ -24,6 +24,12 @@ keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
 keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<C-S-p>", ":Telescope commands" .. ENTER_KEY, opts)
+keymap(
+  NORMAL_MODE,
+  "<Leader>f",
+  ":lua require('spectre').open({ is_close = false }); require('spectre').resume_last_search();" .. ENTER_KEY,
+  opts
+)
 keymap(NORMAL_MODE, "<Leader>d", ":TroubleToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>h", ":Telescope highlights" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>i", ":Inspect" .. ENTER_KEY, opts)
