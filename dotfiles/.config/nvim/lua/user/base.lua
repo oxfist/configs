@@ -35,7 +35,7 @@ vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-c
 vim.opt.list = true
 
 vim.api.nvim_command([[
-  set listchars=tab:\→\ ,multispace:·
+  set listchars=tab:\\ ,multispace:·
 ]])
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {

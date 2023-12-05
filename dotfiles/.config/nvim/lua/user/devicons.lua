@@ -10,6 +10,10 @@ devicons.set_icon({
     icon = "λ",
     name = "Scheme",
   },
+  svg = {
+    icon = "",
+    name = "Svg",
+  },
   txt = {
     icon = "",
     name = "Txt",

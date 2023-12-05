@@ -35,7 +35,7 @@ theme.section.buttons.val = {
   theme.button("f", "  > Find file", ":Telescope find_files<CR>"),
   theme.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
   theme.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-  theme.button("q", "  > Quit NVIM", ":qa<CR>"),
+  theme.button("q", "  > Quit NVIM", ":qa<CR>"),
 }
 
 theme.section.footer.val = version
