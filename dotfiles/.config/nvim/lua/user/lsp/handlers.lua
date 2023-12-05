@@ -29,7 +29,7 @@ end
 M.setup = function()
   local diagnostics_signs = {
     { name = "DiagnosticSignError", text = " " },
-    { name = "DiagnosticSignWarn", text = " " },
+    { name = "DiagnosticSignWarn", text = "⚠️" },
     { name = "DiagnosticSignHint", text = " " },
     { name = "DiagnosticSignInfo", text = " " },
   }

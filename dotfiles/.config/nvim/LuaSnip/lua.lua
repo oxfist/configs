@@ -32,7 +32,7 @@ return {
   s(
     {
       trig = "pcall",
-      dscr = "Protected call for a Lua module for Neovim config",
+      dscr = "Require Lua module through a protected call for Neovim config",
       regTrig = false,
       -- snippetType = "autosnippet",
       priority = 1000,
@@ -44,7 +44,7 @@ return {
           return
         end<>
       ]],
-      { i(1, "status_ok"), i(2), i(3), rep(1), i(0) }
+      { i(1, "status_ok"), i(2), rep(2), rep(1), i(0) }
     )
   ),
 }

@@ -8,14 +8,10 @@ devicons.setup()
 devicons.set_icon({
   scm = {
     icon = "λ",
-    color = "#000000",
-    cterm_color = "16",
     name = "Scheme",
   },
   txt = {
-    icon = "",
-    color = "#447028",
-    cterm_color = "22",
+    icon = "",
     name = "Txt",
   },
 })

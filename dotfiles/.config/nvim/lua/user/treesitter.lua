@@ -17,10 +17,6 @@ treesitter_configs.setup({
   autotag = {
     enable = true,
   },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
   ensure_installed = {
     "bash",
     "c",
@@ -60,6 +56,10 @@ treesitter_configs.setup({
     use_virtual_text = true,
     lint_events = { "BufWrite", "CursorHold" },
   },
+})
+
+ts_context_commentstring.setup({
+  enable_autocmd = false,
 })
 
 comment.setup({

@@ -7,6 +7,7 @@ return {
       diagnostics = {
         globals = { "vim", "pcall", "require", "table" },
       },
+      hint = { enable = true },
     },
   },
 }

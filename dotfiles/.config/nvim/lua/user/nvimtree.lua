@@ -11,6 +11,7 @@ nvim_tree.setup({
   },
   disable_netrw = true,
   hijack_netrw = true,
+  hijack_cursor = true,
   filters = {
     dotfiles = false,
     custom = { "^.git$" },

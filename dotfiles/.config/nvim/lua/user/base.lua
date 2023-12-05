@@ -31,6 +31,12 @@ vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "line,number"
 vim.opt.colorcolumn = "100"
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20,o:hor50"
+vim.opt.list = true
+
+vim.api.nvim_command([[
+  set listchars=tab:\→\ ,multispace:·
+]])
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = "Brewfile",

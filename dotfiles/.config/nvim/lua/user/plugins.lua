@@ -118,6 +118,7 @@ return packer.startup(function(use)
 
   -- Misc
   use("j-hui/fidget.nvim")
+  use({ "goolord/alpha-nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 
   if packer_bootstrap then
     require("packer").sync()
