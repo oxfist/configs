@@ -34,7 +34,9 @@ mason_null_ls.setup({
       null_ls.register(null_ls.builtins.diagnostics.luacheck)
     end,
     prettierd = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.formatting.prettierd)
+      null_ls.register(null_ls.builtins.formatting.prettierd.with({
+        prefer_local = "node_modules/.bin",
+      }))
     end,
     shellcheck = function(_source_name, _methods)
       null_ls.register(null_ls.builtins.diagnostics.shellcheck)

@@ -18,6 +18,7 @@ treesitter_configs.setup({
     enable = true,
   },
   ensure_installed = {
+    "astro",
     "bash",
     "c",
     "css",

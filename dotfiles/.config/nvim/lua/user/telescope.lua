@@ -21,6 +21,7 @@ table.insert(vimgrep_arguments, "!**/.git/*")
 
 telescope.setup({
   defaults = {
+    file_ignore_patterns = { "node_modules", ".next" },
     vimgrep_arguments = vimgrep_arguments,
     mappings = {
       i = {
