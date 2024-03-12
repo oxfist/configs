@@ -83,7 +83,7 @@ return packer.startup(function(use)
   use("mrjones2014/nvim-ts-rainbow")
   use("nvim-treesitter/nvim-treesitter-context")
   use("JoosepAlviste/nvim-ts-context-commentstring")
-  use("kyazdani42/nvim-web-devicons")
+  use("nvim-tree/nvim-web-devicons")
   use({ "kyazdani42/nvim-tree.lua", tag = "nightly" })
   use("nvim-telescope/telescope.nvim")
   use("windwp/nvim-autopairs")
@@ -91,12 +91,9 @@ return packer.startup(function(use)
   use("numToStr/Comment.nvim")
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
-  use("nvimtools/none-ls.nvim")
+  use({ "nvimtools/none-ls.nvim", requires = { "nvimtools/none-ls-extras.nvim", "gbprod/none-ls-shellcheck.nvim" } }) -- null-ls replacement
   use("jayp0521/mason-null-ls.nvim")
-  use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-  })
+  use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = false } })
   use("lukas-reineke/indent-blankline.nvim")
   use("lewis6991/gitsigns.nvim")
   use("RRethy/vim-illuminate")

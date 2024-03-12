@@ -10,42 +10,19 @@ end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
--- IMPORTANT: Make sure all binaries referenced below are installed
-local NULL_LS_SOURCES = {
+-- IMPORTANT: Make sure all binaries referenced below are available in the terminal
+local ENSURE_INSTALLED = {
   "eslint_d",
   "markdownlint",
   "prettierd",
   "shellcheck",
   "stylua",
-  "luacheck",
+  "selene",
+  "pyright",
+  "mypy",
+  "ruff",
+  "blackd",
 }
-
-mason_null_ls.setup({
-  ensure_installed = NULL_LS_SOURCES,
-  handlers = {
-    eslint_d = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.diagnostics.eslint_d)
-    end,
-    markdownlint = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.diagnostics.markdownlint)
-      null_ls.register(null_ls.builtins.formatting.markdownlint)
-    end,
-    luacheck = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.diagnostics.luacheck)
-    end,
-    prettierd = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.formatting.prettierd.with({
-        prefer_local = "node_modules/.bin",
-      }))
-    end,
-    shellcheck = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.diagnostics.shellcheck)
-    end,
-    stylua = function(_source_name, _methods)
-      null_ls.register(null_ls.builtins.formatting.stylua)
-    end,
-  }
-})
 
 local lsp_formatting = function(bufnr)
   -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
@@ -57,7 +34,58 @@ local lsp_formatting = function(bufnr)
   })
 end
 
+local eslint_d = require("none-ls.diagnostics.eslint_d")
+local ruff = require("none-ls.diagnostics.ruff")
+local shellcheck_diagnostics = require("none-ls-shellcheck.diagnostics")
+local shellcheck_code_actions = require("none-ls-shellcheck.code_actions")
+
+mason_null_ls.setup({
+  ensure_installed = ENSURE_INSTALLED,
+
+  sources = {
+    eslint_d,
+    ruff,
+    shellcheck_code_actions,
+    shellcheck_diagnostics,
+    null_ls.builtins.diagnostics.markdownlint,
+    null_ls.builtins.diagnostics.mypy,
+    null_ls.builtins.diagnostics.selene,
+    null_ls.builtins.formatting.markdownlint,
+    null_ls.builtins.formatting.prettierd.with({
+      prefer_local = "node_modules/.bin",
+      filetypes = {
+        "vue",
+        "svelte",
+        "html",
+        "yaml",
+        "graphql",
+      },
+    }),
+    null_ls.builtins.formatting.stylua,
+  },
+
+  handlers = {
+    eslint_d = function(_source_name, _methods)
+      null_ls.register(eslint_d)
+    end,
+
+    shellcheck = function(_source_name, _methods)
+      null_ls.register(shellcheck_diagnostics)
+      null_ls.register(shellcheck_code_actions)
+    end,
+
+    ruff = function(_source_name, _methods)
+      null_ls.register(ruff)
+    end,
+
+  },
+})
+
 null_ls.setup({
+  sources = {
+    -- Sources only support by none-ls
+    null_ls.builtins.formatting.blackd,
+  },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

@@ -4,13 +4,13 @@ if not status_ok then
   return
 end
 
-local status_ok_mason_config, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not status_ok_mason_config then
+local status_ok_mason_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok_mason_lspconfig then
   return
 end
 
-local status_ok_lsp_config, lspconfig = pcall(require, "lspconfig")
-if not status_ok_lsp_config then
+local status_ok_lspconfig, lspconfig = pcall(require, "lspconfig")
+if not status_ok_lspconfig then
   return
 end
 
@@ -19,7 +19,7 @@ if not status_ok_windows then
   return
 end
 
-local LANGUAGE_SERVERS = {
+local ENSURE_INSTALLED_LSPS = {
   "bashls",
   "cssls",
   "cssmodules_ls",
@@ -36,6 +36,7 @@ local LANGUAGE_SERVERS = {
   "tsserver",
   "vimls",
   "yamlls",
+  "pyright",
   -- "ruby_ls",
 }
 
@@ -51,13 +52,13 @@ mason.setup({
 })
 
 mason_lspconfig.setup({
-  ensure_installed = LANGUAGE_SERVERS,
+  ensure_installed = ENSURE_INSTALLED_LSPS,
   automatic_installation = true,
 })
 
 windows.default_options.border = "rounded"
 
-for _, server in pairs(LANGUAGE_SERVERS) do
+for _, server in pairs(ENSURE_INSTALLED_LSPS) do
   local lsp_opts = {
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
@@ -83,6 +84,11 @@ for _, server in pairs(LANGUAGE_SERVERS) do
   if server == "stylelint_lsp" then
     local stylelint_opts = require("user.lsp.settings.stylelint_lsp")
     lsp_opts = vim.tbl_deep_extend("force", stylelint_opts, lsp_opts)
+  end
+
+  if server == "pyright" then
+    local pyright_opts = require("user.lsp.settings.pyright")
+    lsp_opts = vim.tbl_deep_extend("force", pyright_opts, lsp_opts)
   end
 
   -- Set up each LSP server
