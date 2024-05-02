@@ -1,5 +1,6 @@
 add_newline = false
 right_format = "$status $cmd_duration"
+command_timeout = 2_000
 
 [username]
 show_always = true
@@ -11,7 +12,7 @@ ssh_only = false
 format = "[@](white)[$hostname](#df5f00)"
 
 [directory]
-format = " [$path](#87ff00)[$read_only]($read_only_style) " 
+format = " [$path](#87ff00)[$read_only]($read_only_style) "
 
 [character]
 success_symbol = "[λ](white)"
