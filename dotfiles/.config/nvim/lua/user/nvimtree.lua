@@ -4,6 +4,13 @@ if not status_ok then
 end
 
 nvim_tree.setup({
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      },
+    },
+  },
   auto_reload_on_write = true,
   reload_on_bufenter = true,
   diagnostics = {
