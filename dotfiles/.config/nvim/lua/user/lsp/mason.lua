@@ -21,7 +21,7 @@ end
 
 local ENSURE_INSTALLED_LSPS = {
   "bashls",
-  "cssls",
+  -- "cssls",
   "cssmodules_ls",
   "emmet_language_server",
   "html",
@@ -36,7 +36,7 @@ local ENSURE_INSTALLED_LSPS = {
   "tsserver",
   "vimls",
   "yamlls",
-  "pyright",
+  -- "pyright",
   -- "ruby_ls",
 }
 
@@ -90,6 +90,11 @@ for _, server in pairs(ENSURE_INSTALLED_LSPS) do
     local pyright_opts = require("user.lsp.settings.pyright")
     lsp_opts = vim.tbl_deep_extend("force", pyright_opts, lsp_opts)
   end
+
+  -- if server == "cssls" then
+  --   local cssls_opts = require("user.lsp.settings.cssls")
+  --   lsp_opts = vim.tbl_deep_extend("force", cssls_opts, lsp_opts)
+  -- end
 
   -- Set up each LSP server
   lspconfig[server].setup(lsp_opts)

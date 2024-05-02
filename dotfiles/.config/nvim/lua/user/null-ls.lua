@@ -18,7 +18,7 @@ local ENSURE_INSTALLED = {
   "shellcheck",
   "stylua",
   "selene",
-  "pyright",
+  -- "pyright",
   "mypy",
   "ruff",
   "blackd",
@@ -78,6 +78,13 @@ mason_null_ls.setup({
       null_ls.register(ruff)
     end,
 
+    -- latexindent = function(_source_name, _methods)
+    --   null_ls.register(null_ls.builtins.formatting.latexindent.with({
+    --     extra_args = {
+    --       "-m",
+    --     },
+    --   }))
+    -- end,
   },
 })
 

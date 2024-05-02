@@ -80,7 +80,7 @@ return packer.startup(function(use)
   use("rafamadriz/friendly-snippets")
 
   -- Better DX
-  use("mrjones2014/nvim-ts-rainbow")
+  use("HiPhish/rainbow-delimiters.nvim")
   use("nvim-treesitter/nvim-treesitter-context")
   use("JoosepAlviste/nvim-ts-context-commentstring")
   use("nvim-tree/nvim-web-devicons")
@@ -104,13 +104,7 @@ return packer.startup(function(use)
   use("NvChad/nvim-colorizer.lua")
   use("folke/trouble.nvim")
   use("simrat39/symbols-outline.nvim")
-  use({
-    "akinsho/toggleterm.nvim",
-    tag = "*",
-    config = function()
-      require("toggleterm").setup()
-    end,
-  })
+  use({ "akinsho/toggleterm.nvim", tag = "*" })
   use("nvim-pack/nvim-spectre")
 
   -- Misc

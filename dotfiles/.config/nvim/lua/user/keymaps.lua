@@ -16,6 +16,7 @@ keymap(ANY_MODE, RUN_CODE_KEY, ":MarkdownPreview<CR>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap(NORMAL_MODE, "<C-c>", ESCAPE_KEY, opts)
 keymap(NORMAL_MODE, "<C-d>", "<C-d>zz", opts)
 keymap(NORMAL_MODE, "<C-u>", "<C-u>zz", opts)
 keymap(NORMAL_MODE, "<C-h>", "<C-w>h", opts)
@@ -39,10 +40,10 @@ keymap(NORMAL_MODE, "<Leader>s", ":SymbolsOutline" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>t", ":TSHighlightCapturesUnderCursor" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>p", ":TSPlaygroundToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
-keymap(NORMAL_MODE, "`", ":ToggleTerm direction=vertical size=75" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "n", "nzzzv", opts)
 keymap(NORMAL_MODE, "N", "Nzzzv", opts)
 
+keymap(INSERT_MODE, "<C-c>", ESCAPE_KEY, opts)
 keymap(INSERT_MODE, "<C-p>", "", opts)
 keymap(INSERT_MODE, "<C-n>", "", opts)
 keymap(INSERT_MODE, "kj", ESCAPE_KEY, opts)
