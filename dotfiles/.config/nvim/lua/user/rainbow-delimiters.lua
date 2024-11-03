@@ -9,4 +9,10 @@ rainbow_delimiters.setup({
     "RainbowDelimiterViolet",
     "RainbowDelimiterBlue",
   },
+  query = {
+    markdown = "",
+    javascript = "rainbow-parens",
+    typescript = "rainbow-parens",
+    tsx = "rainbow-parens",
+  },
 })

@@ -6,16 +6,10 @@ end
 devicons.setup()
 
 devicons.set_icon({
-  scm = {
-    icon = "λ",
-    name = "Scheme",
-  },
-  svg = {
-    icon = "",
-    name = "Svg",
-  },
-  txt = {
-    icon = "",
-    name = "Txt",
-  },
+  Dockerfile = { icon = "", name = "Dockerfile" },
+  R = { icon = "", name = "R" },
+  r = { icon = "", name = "R" },
+  scm = { icon = "λ", name = "Scheme" },
+  svg = { icon = "", name = "Svg" },
+  txt = { icon = "", name = "Txt" },
 })

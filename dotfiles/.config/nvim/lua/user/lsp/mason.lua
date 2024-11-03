@@ -19,24 +19,26 @@ if not status_ok_windows then
   return
 end
 
+-- These will be installed by Mason but not necessarily register them.
 local ENSURE_INSTALLED_LSPS = {
   "bashls",
-  -- "cssls",
   "cssmodules_ls",
   "emmet_language_server",
   "html",
   "jsonls",
   "lua_ls",
   "marksman",
+  "pylsp",
+  -- "ruff",
   "rust_analyzer",
   "solargraph",
   "stylelint_lsp",
   "tailwindcss",
   "taplo",
-  "tsserver",
+  "ts_ls",
   "vimls",
   "yamlls",
-  -- "pyright",
+  -- "cssls",
   -- "ruby_ls",
 }
 
@@ -58,22 +60,18 @@ mason_lspconfig.setup({
 
 windows.default_options.border = "rounded"
 
-for _, server in pairs(ENSURE_INSTALLED_LSPS) do
-  local lsp_opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
-  }
+local lsp_opts = {
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
 
+-- TODO: extract this to a lsp.lua config file
+for _, server in pairs(ENSURE_INSTALLED_LSPS) do
   server = vim.split(server, "@")[1]
 
   if server == "jsonls" then
     local jsonls_opts = require("user.lsp.settings.jsonls")
     lsp_opts = vim.tbl_deep_extend("force", jsonls_opts, lsp_opts)
-  end
-
-  if server == "ruby_ls" then
-    local rubyls_opts = require("user.lsp.settings.ruby_ls")
-    lsp_opts = vim.tbl_deep_extend("force", rubyls_opts, lsp_opts)
   end
 
   if server == "lua_ls" then
@@ -86,15 +84,22 @@ for _, server in pairs(ENSURE_INSTALLED_LSPS) do
     lsp_opts = vim.tbl_deep_extend("force", stylelint_opts, lsp_opts)
   end
 
-  if server == "pyright" then
-    local pyright_opts = require("user.lsp.settings.pyright")
-    lsp_opts = vim.tbl_deep_extend("force", pyright_opts, lsp_opts)
+  if server == "pylsp" then
+    local pylsp_opts = require("user.lsp.settings.pylsp")
+    lsp_opts = vim.tbl_deep_extend("force", pylsp_opts, lsp_opts)
   end
 
-  -- if server == "cssls" then
-  --   local cssls_opts = require("user.lsp.settings.cssls")
-  --   lsp_opts = vim.tbl_deep_extend("force", cssls_opts, lsp_opts)
-  -- end
+  if server == "rust_analyzer" then
+    local rust_analyzer_opts = {
+      cmd = {
+        "rustup",
+        "run",
+        "stable",
+        "rust-analyzer",
+      },
+    }
+    lsp_opts = vim.tbl_deep_extend("force", rust_analyzer_opts, lsp_opts)
+  end
 
   -- Set up each LSP server
   lspconfig[server].setup(lsp_opts)

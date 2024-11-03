@@ -23,8 +23,7 @@ keymap(NORMAL_MODE, "<C-h>", "<C-w>h", opts)
 keymap(NORMAL_MODE, "<C-j>", "<C-w>j", opts)
 keymap(NORMAL_MODE, "<C-k>", "<C-w>k", opts)
 keymap(NORMAL_MODE, "<C-l>", "<C-w>l", opts)
-keymap(NORMAL_MODE, "<C-p>", ":Telescope find_files" .. ENTER_KEY, opts)
-keymap(NORMAL_MODE, "<C-S-p>", ":Telescope commands" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<D-P>", ":Telescope commands" .. ENTER_KEY, opts)
 keymap(
   NORMAL_MODE,
   "<Leader>f",
@@ -40,6 +39,7 @@ keymap(NORMAL_MODE, "<Leader>s", ":SymbolsOutline" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>t", ":TSHighlightCapturesUnderCursor" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>p", ":TSPlaygroundToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<F20>", ":Telescope find_files" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "n", "nzzzv", opts)
 keymap(NORMAL_MODE, "N", "Nzzzv", opts)
 
@@ -48,6 +48,7 @@ keymap(INSERT_MODE, "<C-p>", "", opts)
 keymap(INSERT_MODE, "<C-n>", "", opts)
 keymap(INSERT_MODE, "kj", ESCAPE_KEY, opts)
 keymap(INSERT_MODE, "KJ", ESCAPE_KEY, opts)
+keymap(INSERT_MODE, "<A-BS>", "<C-w>", opts)
 
 keymap(VISUAL_MODE, "<", "<gv", opts)
 keymap(VISUAL_MODE, ">", ">gv", opts)

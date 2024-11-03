@@ -4,13 +4,13 @@ if not status_ok then
 end
 
 local s = ls.snippet
--- local sn = ls.snippet_node
+local sn = ls.snippet_node
 -- local isn = ls.indent_snippet_node
--- local t = ls.text_node
+local t = ls.text_node
 local i = ls.insert_node
 -- local f = ls.function_node
 -- local c = ls.choice_node
--- local d = ls.dynamic_node
+local d = ls.dynamic_node
 -- local r = ls.restore_node
 -- local events = require("luasnip.util.events")
 -- local ai = require("luasnip.nodes.absolute_indexer")
@@ -35,7 +35,7 @@ return {
       dscr = "Require Lua module through a protected call for Neovim config",
       regTrig = false,
       -- snippetType = "autosnippet",
-      priority = 1000,
+      priority = 2000,
     },
     fmta(
       [[
@@ -44,7 +44,13 @@ return {
           return
         end<>
       ]],
-      { i(1, "status_ok"), i(2), rep(2), rep(1), i(0) }
+      {
+        i(1, "status_ok"),
+        i(2),
+        i(3),
+        rep(1),
+        i(0),
+      }
     )
   ),
 }

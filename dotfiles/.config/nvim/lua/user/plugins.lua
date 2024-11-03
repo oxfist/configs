@@ -44,7 +44,7 @@ return packer.startup(function(use)
   use("nvim-lua/popup.nvim")
   use("nvim-lua/plenary.nvim")
 
-  -- Language utilities
+  -- 󰢱 Language Support
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -106,6 +106,22 @@ return packer.startup(function(use)
   use("simrat39/symbols-outline.nvim")
   use({ "akinsho/toggleterm.nvim", tag = "*" })
   use("nvim-pack/nvim-spectre")
+  use({
+    "linux-cultist/venv-selector.nvim",
+    branch = "regexp",
+    requires = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+    config = function()
+      require("venv-selector").setup({
+        -- Your options go here
+        name = "lp-crawler-test-env",
+        -- keys = {
+        --   { ",v", "<cmd>VenvSelecr<cr>" },
+        -- },
+        -- auto_refresh = true,
+      })
+    end,
+  })
+  -- use("gelguy/wilder.nvim")
 
   -- Misc
   use("j-hui/fidget.nvim")

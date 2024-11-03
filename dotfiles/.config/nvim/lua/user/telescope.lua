@@ -26,11 +26,13 @@ telescope.setup({
     mappings = {
       i = {
         ["<Esc>"] = actions.close,
+        ["<C-c>"] = actions.close,
+        ["kj"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-b>"] = actions.results_scrolling_up,
         ["<C-f>"] = actions.results_scrolling_down,
-        ["kj"] = actions.close,
+        ["<F19>"] = actions.select_vertical,
       },
     },
   },

@@ -34,6 +34,8 @@ vim.opt.cursorlineopt = "line,number"
 vim.opt.colorcolumn = "100"
 vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20,o:hor50"
 vim.opt.list = true
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.api.nvim_command([[
   set listchars=tab:\→\ ,multispace:·
@@ -42,4 +44,37 @@ vim.api.nvim_command([[
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = "Brewfile",
   command = "set filetype=ruby",
+})
+
+vim.g.python3_host_prog = "~/.pyenv/versions/py3nvim/bin/python"
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  desc = "Auto select virtualenv Nvim open",
+  pattern = "*",
+  callback = function()
+    local venv = vim.fn.findfile("pyproject.toml", vim.fn.getcwd() .. ";")
+    -- if venv ~= "" then
+    --   require("venv-selector").retrieve_from_cache()
+    -- end
+  end,
+  once = true,
+})
+
+-- Function to source a project-specific config if it exists
+local function load_project_config()
+  local project_config = vim.fn.getcwd() .. "/.nvim/init.lua"
+  if vim.fn.filereadable(project_config) == 1 then
+    vim.cmd("source " .. project_config)
+  end
+end
+
+-- Create autocommands using nvim_create_autocmd
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  callback = load_project_config,
+})
+
+vim.api.nvim_create_autocmd("DirChanged", {
+  pattern = "*",
+  callback = load_project_config,
 })

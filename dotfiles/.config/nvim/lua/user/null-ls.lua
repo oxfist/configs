@@ -11,17 +11,17 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- IMPORTANT: Make sure all binaries referenced below are available in the terminal
-local ENSURE_INSTALLED = {
+local ENSURE_INSTALLED_LSPS = {
+  "black",
+  "blackd-client",
   "eslint_d",
   "markdownlint",
+  "mypy",
   "prettierd",
+  "ruff-lsp",
+  "selene",
   "shellcheck",
   "stylua",
-  "selene",
-  -- "pyright",
-  "mypy",
-  "ruff",
-  "blackd",
 }
 
 local lsp_formatting = function(bufnr)
@@ -35,16 +35,17 @@ local lsp_formatting = function(bufnr)
 end
 
 local eslint_d = require("none-ls.diagnostics.eslint_d")
-local ruff = require("none-ls.diagnostics.ruff")
+local ruff_lsp = require("none-ls.diagnostics.ruff")
 local shellcheck_diagnostics = require("none-ls-shellcheck.diagnostics")
 local shellcheck_code_actions = require("none-ls-shellcheck.code_actions")
 
 mason_null_ls.setup({
-  ensure_installed = ENSURE_INSTALLED,
+  ensure_installed = ENSURE_INSTALLED_LSPS,
 
+  -- These WILL be registered.
   sources = {
     eslint_d,
-    ruff,
+    ruff_lsp,
     shellcheck_code_actions,
     shellcheck_diagnostics,
     null_ls.builtins.diagnostics.markdownlint,
@@ -62,6 +63,7 @@ mason_null_ls.setup({
       },
     }),
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.blackd,
   },
 
   handlers = {
@@ -74,8 +76,8 @@ mason_null_ls.setup({
       null_ls.register(shellcheck_code_actions)
     end,
 
-    ruff = function(_source_name, _methods)
-      null_ls.register(ruff)
+    ruff_lsp = function(_source_name, _methods)
+      null_ls.register(ruff_lsp)
     end,
 
     -- latexindent = function(_source_name, _methods)
@@ -90,8 +92,7 @@ mason_null_ls.setup({
 
 null_ls.setup({
   sources = {
-    -- Sources only support by none-ls
-    null_ls.builtins.formatting.blackd,
+    -- Sources only supported by none-ls
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

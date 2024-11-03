@@ -4,8 +4,7 @@ if not status_ok then
 end
 
 -- Set to compile theme colorgen package
-vim.cmd([[autocmd BufWritePost ~/Coding/night-owl.nvim/night-owl.toml :!colorgen-nvim night-owl.toml]])
+-- vim.cmd([[autocmd BufWritePost ~/Coding/night-owl.nvim/night-owl.toml :!colorgen-nvim night-owl.toml]])
 
-night_owl.setup({
-  italics = true,
-})
+night_owl.setup()
+vim.cmd([[ colorscheme night-owl ]])
