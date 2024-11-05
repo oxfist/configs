@@ -8,7 +8,7 @@ local ANY_MODE = ""
 
 local ENTER_KEY = "<CR>"
 local ESCAPE_KEY = "<ESC>"
-local RUN_CODE_KEY = "<F8>"
+local RUN_CODE_KEY = "<F5>"
 local SPACE_KEY = "<Space>"
 
 keymap(ANY_MODE, SPACE_KEY, "<Nop>", opts)
@@ -39,7 +39,7 @@ keymap(NORMAL_MODE, "<Leader>s", ":SymbolsOutline" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>t", ":TSHighlightCapturesUnderCursor" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>p", ":TSPlaygroundToggle" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "<Leader>,", ":nohlsearch" .. ENTER_KEY, opts)
-keymap(NORMAL_MODE, "<F20>", ":Telescope find_files" .. ENTER_KEY, opts)
+keymap(NORMAL_MODE, "<F18>", ":Telescope find_files" .. ENTER_KEY, opts)
 keymap(NORMAL_MODE, "n", "nzzzv", opts)
 keymap(NORMAL_MODE, "N", "Nzzzv", opts)
 
