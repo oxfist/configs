@@ -1,6 +1,5 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-
 local NORMAL_MODE = "n"
 local INSERT_MODE = "i"
 local VISUAL_MODE = "v"
