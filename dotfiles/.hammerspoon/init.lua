@@ -1,0 +1,6 @@
+hs.hotkey.bind({ "alt" }, "F9", function()
+	hs.eventtap.keyStrokes("“")
+end)
+hs.hotkey.bind({ "alt" }, "F10", function()
+	hs.eventtap.keyStrokes("”")
+end)
